@@ -1,5 +1,5 @@
 # Maven class folder
-/target/
+target/
 # eclipse config
 .classpath
 # IntelliJ config
