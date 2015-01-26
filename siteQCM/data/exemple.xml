@@ -1,0 +1,181 @@
+<interro>
+	<titre-interro>Interro 1</titre-interro>
+	<date>26 janvier 2015</date>
+	<duree>2h</duree>
+	<avant-propos>Ceci est un avant-propos...</avant-propos>
+	<qcm>
+		<etudiant>
+			<code>TOTO</code>
+			<nom></nom>
+			<prenom></prenom>
+			<note></note>
+		</etudiant>
+		<termine></termine>
+		<partie>
+			<titre>Partie 1</titre>
+			<question>
+				<enonce>Que font 1+1 ?</enonce>
+				<reponse>
+					<proposition>3</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>2</proposition>
+					<correct>true</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>10</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+			</question>
+			<question>
+				<enonce>Que font 2*3 ?</enonce>
+				<reponse>
+					<proposition>6</proposition>
+					<correct>true</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>2</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>-6</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+			</question>
+		</partie>
+		<partie>
+			<titre>Partie 2</titre>
+			<question>
+				<enonce>Lequels de ces animaux sont des mammifères ?</enonce>
+				<reponse>
+					<proposition>chien</proposition>
+					<correct>true</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>vache</proposition>
+					<correct>true</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>serpent</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+			</question>
+			<question>
+				<enonce>Combien de côtés possède un carré ?</enonce>
+				<reponse>
+					<proposition>6</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>2</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>4</proposition>
+					<correct>true</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+			</question>
+		</partie>
+	</qcm>
+	<qcm>
+		<etudiant>
+			<code>TITI</code>
+			<nom></nom>
+			<prenom></prenom>
+			<note></note>
+		</etudiant>
+		<termine></termine>
+		<partie>
+			<titre>Partie 1</titre>
+			<question>
+				<enonce>Que font 1+1 ?</enonce>
+				<reponse>
+					<proposition>3</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>2</proposition>
+					<correct>true</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>10</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+			</question>
+			<question>
+				<enonce>Lequels de ces animaux sont des mammifères ?</enonce>
+				<reponse>
+					<proposition>chien</proposition>
+					<correct>true</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>vache</proposition>
+					<correct>true</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>serpent</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+			</question>
+		</partie>
+		<partie>
+			<titre>Partie 2</titre>
+			
+			<question>
+				<enonce>Combien de côtés possède un carré ?</enonce>
+				<reponse>
+					<proposition>6</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>2</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>4</proposition>
+					<correct>true</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+			</question>
+			<question>
+				<enonce>Que font 2*3 ?</enonce>
+				<reponse>
+					<proposition>6</proposition>
+					<correct>true</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>2</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+				<reponse>
+					<proposition>-6</proposition>
+					<correct>false</correct>
+					<choix-etudiant></choix-etudiant>
+				</reponse>
+			</question>
+		</partie>
+	</qcm>
+</interro>
