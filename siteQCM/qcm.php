@@ -1,7 +1,10 @@
 <?php
 
+require_once("controllers/XMLTools.php");
+require_once("controllers/Etudiant.php");
+
 if (!isset($_POST["code"])) {
-    header("Location: selectQCM.php");
+    header("Location: index.php");
     die();
 }
 
@@ -9,8 +12,13 @@ if (!isset($_POST["code"])) {
  * Traitement du code
  */
 
+$xmlTools = new XMLTools();
+$etudiant = $xmlTools->existeQCM("data/exemple.xml", $_POST["code"]);
 
-$code = $_POST["code"];
+if (!isset($etudiant) || $etudiant == NULL) {
+    header("Location: index.php");
+    die();
+}
 
 ?>
 
@@ -36,7 +44,7 @@ $code = $_POST["code"];
     <h1> Titre du QCM </h1>
 
     <form method="post" action="controllers/submitQCM.php">
-        <input type="hidden" name="code" value="<?php echo $code ?>" />
+        <input type="hidden" name="code" value="<?php echo $etudiant->getCode(); ?>" />
         <!--
 
             Remplacer par une boucle

@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_POST['code'])) {
-    header("Location: ../qcm.php");
+    header("Location: ../index.php");
     die();
 }
 

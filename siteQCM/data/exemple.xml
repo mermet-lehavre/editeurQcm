@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <interro>
 	<titre-interro>Interro 1</titre-interro>
 	<date>26 janvier 2015</date>
@@ -53,7 +54,7 @@
 		<partie>
 			<titre>Partie 2</titre>
 			<question>
-				<enonce>Lequels de ces animaux sont des mammifères ?</enonce>
+				<enonce>Lequels de ces animaux sont des mammifï¿½res ?</enonce>
 				<reponse>
 					<proposition>chien</proposition>
 					<correct>true</correct>
@@ -71,7 +72,7 @@
 				</reponse>
 			</question>
 			<question>
-				<enonce>Combien de côtés possède un carré ?</enonce>
+				<enonce>Combien de cï¿½tï¿½s possï¿½de un carrï¿½ ?</enonce>
 				<reponse>
 					<proposition>6</proposition>
 					<correct>false</correct>
@@ -119,7 +120,7 @@
 				</reponse>
 			</question>
 			<question>
-				<enonce>Lequels de ces animaux sont des mammifères ?</enonce>
+				<enonce>Lequels de ces animaux sont des mammifï¿½res ?</enonce>
 				<reponse>
 					<proposition>chien</proposition>
 					<correct>true</correct>
@@ -141,7 +142,7 @@
 			<titre>Partie 2</titre>
 			
 			<question>
-				<enonce>Combien de côtés possède un carré ?</enonce>
+				<enonce>Combien de cï¿½tï¿½s possï¿½de un carrï¿½ ?</enonce>
 				<reponse>
 					<proposition>6</proposition>
 					<correct>false</correct>
