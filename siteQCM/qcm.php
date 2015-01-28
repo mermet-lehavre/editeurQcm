@@ -16,10 +16,10 @@ if (!isset($_POST["code"])) {
  * Traitement du code
  */
 
-$xmlTools = new XMLTools();
-$existeQCM = $xmlTools->existeQCM("data/exemple.xml", $_POST["code"]);
+$xmlTools = new XMLTools("data/exemple.xml", $_POST["code"]);
+$qcm = $xmlTools->searchQCM();
 
-if (!isset($existeQCM) || $existeQCM == NULL) {
+if (!isset($qcm) || $qcm == NULL) {
     header("Location: index.php");
     die();
 }
@@ -37,25 +37,25 @@ if (!isset($existeQCM) || $existeQCM == NULL) {
 <body>
 
 <div class="container">
-    <h1><?php echo $existeQCM->getTitre() ?></h1>
+    <h1><?php echo $qcm->getTitre() ?></h1>
 
     <form method="post" action="controllers/submitQCM.php">
-        <input type="hidden" name="code" value="<?php echo $existeQCM->getEtudiant()->getCode(); ?>" />
+        <input type="hidden" name="code" value="<?php echo $qcm->getEtudiant()->getCode(); ?>" />
 
         <?php
 
-        foreach($existeQCM->getParties() as $partie) {
+        foreach($qcm->getParties() as $partie) {
             echo "<p class='contenu'>" . $partie->getTitrePartie() . "</p>";
 
-            $questions = $partie->getQuestions();
-            for($i = 0; $i < sizeof($questions); $i++) {
-                $question = $questions[$i];
-                echo "<div><legend>Question " . ($i+1) . " : </legend>" . $question->getEnonce() . "</div><div>";
-
-                $responses = $question->getReponses();
-                for($j = 0; $j < sizeof($responses); $j++) {
-                    $reponse = $responses[$j];
-                    echo "<input type='radio' name='question-$j' value='reponse1q1' id='reponse1q1'/> <label for='reponse1q1'>" . $reponse->getProposition(). "</label> <br/>";
+            foreach ($partie->getQuestions() as $question) {
+                $idQuestion = $question->getId();
+                $enonce = $question->getEnonce();
+                echo "<div><legend>Question $idQuestion : </legend>$enonce</div><div>";
+                foreach ($question->getReponses() as $reponse) {
+                    $idReponse = $reponse->getId();
+                    $proposition = $reponse->getProposition();
+                    $idInput = "reponse" .$idReponse ."q" . $idQuestion;
+                    echo "<input type='radio' name='question-" . $idQuestion . "' value='$idReponse' id='$idInput'/> <label for='$idInput'>$proposition</label> <br/>";
                 }
                 echo "</div>";
             }

@@ -7,86 +7,86 @@
 	<qcm>
 		<etudiant>
 			<code>TOTO</code>
-			<nom></nom>
-			<prenom></prenom>
-			<note></note>
+			<nom/>
+			<prenom/>
+			<note/>
 		</etudiant>
-		<termine></termine>
+		<termine/>
 		<partie>
 			<titre>Partie 1</titre>
-			<question>
+			<question id="1">
 				<enonce>Que font 1+1 ?</enonce>
-				<reponse>
+				<reponse id="1">
 					<proposition>3</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="2">
 					<proposition>2</proposition>
 					<correct>true</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="3">
 					<proposition>10</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
 			</question>
-			<question>
+			<question id="2">
 				<enonce>Que font 2*3 ?</enonce>
-				<reponse>
+				<reponse id="1">
 					<proposition>6</proposition>
 					<correct>true</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="2">
 					<proposition>2</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="3">
 					<proposition>-6</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
 			</question>
 		</partie>
 		<partie>
 			<titre>Partie 2</titre>
-			<question>
+			<question id="3">
 				<enonce>Lequels de ces animaux sont des mammif�res ?</enonce>
-				<reponse>
+				<reponse id="1">
 					<proposition>chien</proposition>
 					<correct>true</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="2">
 					<proposition>vache</proposition>
 					<correct>true</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="3">
 					<proposition>serpent</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
 			</question>
-			<question>
+			<question id="4">
 				<enonce>Combien de c�t�s poss�de un carr� ?</enonce>
-				<reponse>
+				<reponse id="1">
 					<proposition>6</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="2">
 					<proposition>2</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="3">
 					<proposition>4</proposition>
 					<correct>true</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
 			</question>
 		</partie>
@@ -94,87 +94,87 @@
 	<qcm>
 		<etudiant>
 			<code>TITI</code>
-			<nom></nom>
-			<prenom></prenom>
-			<note></note>
+			<nom/>
+			<prenom/>
+			<note/>
 		</etudiant>
-		<termine></termine>
+		<termine/>
 		<partie>
 			<titre>Partie 1</titre>
-			<question>
+			<question id="1">
 				<enonce>Que font 1+1 ?</enonce>
-				<reponse>
+				<reponse id="1">
 					<proposition>3</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="2">
 					<proposition>2</proposition>
 					<correct>true</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="3">
 					<proposition>10</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
 			</question>
-			<question>
+			<question id="2">
 				<enonce>Lequels de ces animaux sont des mammif�res ?</enonce>
-				<reponse>
+				<reponse id="1">
 					<proposition>chien</proposition>
 					<correct>true</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="2">
 					<proposition>vache</proposition>
 					<correct>true</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="3">
 					<proposition>serpent</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
 			</question>
 		</partie>
 		<partie>
 			<titre>Partie 2</titre>
-			
-			<question>
+
+			<question id="3">
 				<enonce>Combien de c�t�s poss�de un carr� ?</enonce>
-				<reponse>
+				<reponse id="1">
 					<proposition>6</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="2">
 					<proposition>2</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="3">
 					<proposition>4</proposition>
 					<correct>true</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
 			</question>
-			<question>
+			<question id="4">
 				<enonce>Que font 2*3 ?</enonce>
-				<reponse>
+				<reponse id="1">
 					<proposition>6</proposition>
 					<correct>true</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="2">
 					<proposition>2</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
-				<reponse>
+				<reponse id="3">
 					<proposition>-6</proposition>
 					<correct>false</correct>
-					<choix-etudiant></choix-etudiant>
+					<choix-etudiant/>
 				</reponse>
 			</question>
 		</partie>

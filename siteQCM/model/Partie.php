@@ -21,4 +21,13 @@ class Partie {
     public function addQuestion($index, $question) {
         $this->questions[$index] = $question;
     }
+
+    public function findQuestion($idQuestion) {
+        foreach($this->questions as $question) {
+            if ($question->getId() == $idQuestion) {
+                return $question;
+            }
+        }
+        return NULL;
+    }
 }
