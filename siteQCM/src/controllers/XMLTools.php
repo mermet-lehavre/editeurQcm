@@ -7,13 +7,17 @@ class XMLTools
     private $code;
     private $interro;
 
-    function __construct($fichier, $code)
+    function __construct($fichier)
     {
         $this->document_xml = new DomDocument();
         $this->fichier = $fichier;
-        $this->code = $code;
+
 
         $this->document_xml->load($this->fichier);
+    }
+
+    function setCode($code) {
+        $this->code = $code;
     }
 
     function searchQCM()

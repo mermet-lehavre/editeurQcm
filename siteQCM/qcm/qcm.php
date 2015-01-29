@@ -1,14 +1,14 @@
 <?php
 
-require_once("controllers/XMLTools.php");
-require_once("model/QCM.php");
-require_once("model/Etudiant.php");
-require_once("model/Partie.php");
-require_once("model/Question.php");
-require_once("model/Reponse.php");
+require_once("../src/controllers/XMLTools.php");
+require_once("../src/model/QCM.php");
+require_once("../src/model/Etudiant.php");
+require_once("../src/model/Partie.php");
+require_once("../src/model/Question.php");
+require_once("../src/model/Reponse.php");
 
 if (!isset($_POST["code"])) {
-    header("Location: index.php");
+    header("Location: index.html");
     die();
 }
 
@@ -16,11 +16,12 @@ if (!isset($_POST["code"])) {
  * Traitement du code
  */
 
-$xmlTools = new XMLTools("data/exemple.xml", $_POST["code"]);
+$xmlTools = new XMLTools("../ressources/data/exemple.xml");
+$xmlTools->setCode($_POST["code"]);
 $qcm = $xmlTools->searchQCM();
 
 if (!isset($qcm) || $qcm == NULL) {
-    header("Location: index.php");
+    header("Location: index.html");
     die();
 }
 ?>
@@ -30,16 +31,16 @@ if (!isset($qcm) || $qcm == NULL) {
 <head lang="en">
     <meta charset="UTF-8">
     <title>QCM</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../ressources/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../ressources/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="../ressources/css/style.css">
 </head>
 <body>
 
 <div class="container">
     <h1><?php echo $qcm->getTitre() ?></h1>
 
-    <form method="post" action="controllers/submitQCM.php">
+    <form method="post" action="../src/controllers/submitQCM.php">
         <input type="hidden" name="code" value="<?php echo $qcm->getEtudiant()->getCode(); ?>" />
 
         <?php
@@ -69,7 +70,7 @@ if (!isset($qcm) || $qcm == NULL) {
     </footer>
 
     </div>
-    <script src="js/jquery-2.1.3.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="../ressources/js/jquery-2.1.3.js"></script>
+    <script src="../ressources/js/bootstrap.js"></script>
 </body>
 </html>

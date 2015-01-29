@@ -8,16 +8,17 @@ require_once("../model/Question.php");
 require_once("../model/Reponse.php");
 
 if (!isset($_POST['code']) || $_POST['code'] == NULL) {
-    header("Location: ../index.php");
+    header("Location: ../../qcm/index.html");
     die();
 }
 
-$xmlTools = new XMLTools("../data/exemple.xml", $_POST["code"]);
-$code = $_POST['code'];
+$xmlTools = new XMLTools("../../ressources/data/exemple.xml");
+$xmlTools->setCode($_POST["code"]);
 $qcm = $xmlTools->searchQCM();
 
+
 if (!isset($qcm) || $qcm == NULL) {
-    header("Location: index.php");
+    header("Location: ../qcm/index.html");
     die();
 }
 
