@@ -8,7 +8,7 @@ require_once("../model/Question.php");
 require_once("../model/Reponse.php");
 
 if (!isset($_POST['code']) || $_POST['code'] == NULL) {
-    header("Location: ../../qcm/index.html");
+    header("Location: index.php");
     die();
 }
 
@@ -18,13 +18,11 @@ $qcm = $xmlTools->searchQCM();
 
 
 if (!isset($qcm) || $qcm == NULL) {
-    header("Location: ../qcm/index.html");
+    header("Location: index.php");
     die();
 }
 
-
 foreach ($_POST as $key => $value) {
-
     if (strpos($key, "question") !== false) {
         $questions = explode("-", $key);
 

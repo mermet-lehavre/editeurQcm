@@ -7,11 +7,9 @@ class XMLTools
     private $code;
     private $interro;
 
-    function __construct($fichier)
-    {
+    function __construct($fichier) {
         $this->document_xml = new DomDocument();
         $this->fichier = $fichier;
-
 
         $this->document_xml->load($this->fichier);
     }
@@ -20,8 +18,7 @@ class XMLTools
         $this->code = $code;
     }
 
-    function searchQCM()
-    {
+    function searchQCM() {
         $titre = $this->document_xml->getElementsByTagName('titre-interro')->item(0)->nodeValue;
         $date = $this->document_xml->getElementsByTagName('date')->item(0)->nodeValue;
         $duree = $this->document_xml->getElementsByTagName('duree')->item(0)->nodeValue;
@@ -87,8 +84,7 @@ class XMLTools
         }
     }
 
-    function submitQCM()
-    {
+    function submitQCM() {
         foreach ($this->document_xml->getElementsByTagName('qcm') as $qcm) {
             $code = $qcm->getElementsByTagName('code')->item(0)->nodeValue;
 
@@ -98,6 +94,6 @@ class XMLTools
         }
 
         $this->document_xml->save($this->fichier);
-        echo "SAUVEGARDE";
+        echo "SAUVEGARDE du fichier " . $this->fichier;
     }
 }
