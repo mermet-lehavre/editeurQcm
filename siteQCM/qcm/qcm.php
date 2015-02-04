@@ -38,14 +38,17 @@ if (!isset($qcm) || $qcm == NULL) {
 <body>
 
 <div class="container">
-    <h1><?php echo $qcm->getTitre() ?></h1>
-
     <form method="post" action="../src/controllers/submitQCM.php">
-        <input type="hidden" name="code" value="<?php echo $qcm->getEtudiant()->getCode(); ?>" />
+        <div class="row"><label>Nom</label><input type="text" name="nom" required></div>
+        <div class="row"><label>Prenom</label><input type="text" name="prenom" required></div>
+        <div class="row"><label>Numéro Etudiant</label><input type="text" name="numEtudiant" required></div>
+        <h1><?php echo $qcm->getTitre() ?></h1>
+
+        <input type="hidden" name="code" value="<?php echo $qcm->getEtudiant()->getCode(); ?>"/>
 
         <?php
 
-        foreach($qcm->getParties() as $partie) {
+        foreach ($qcm->getParties() as $partie) {
             echo "<p class='contenu'>" . $partie->getTitrePartie() . "</p>";
 
             foreach ($partie->getQuestions() as $question) {
@@ -55,7 +58,7 @@ if (!isset($qcm) || $qcm == NULL) {
                 foreach ($question->getReponses() as $reponse) {
                     $idReponse = $reponse->getId();
                     $proposition = $reponse->getProposition();
-                    $idInput = "reponse" .$idReponse ."q" . $idQuestion;
+                    $idInput = "reponse" . $idReponse . "q" . $idQuestion;
                     echo "<input type='radio' name='question-" . $idQuestion . "' value='$idReponse' id='$idInput'/> <label for='$idInput'>$proposition</label> <br/>";
                 }
                 echo "</div>";
@@ -69,8 +72,8 @@ if (!isset($qcm) || $qcm == NULL) {
         <p>Mr Mermet</p>
     </footer>
 
-    </div>
-    <script src="../ressources/js/jquery-2.1.3.js"></script>
-    <script src="../ressources/js/bootstrap.js"></script>
+</div>
+<script src="../ressources/js/jquery-2.1.3.js"></script>
+<script src="../ressources/js/bootstrap.js"></script>
 </body>
 </html>

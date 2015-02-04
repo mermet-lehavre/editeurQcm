@@ -42,6 +42,6 @@ foreach ($_POST as $key => $value) {
     }
 }
 
-$xmlTools->submitQCM();
+$xmlTools->submitQCM($_POST['nom'], $_POST['prenom'], $_POST['numEtudiant']);
 
 ?>

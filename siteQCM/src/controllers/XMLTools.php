@@ -84,12 +84,15 @@ class XMLTools
         }
     }
 
-    function submitQCM() {
+    function submitQCM($nom, $prenom, $numEtudiant) {
         foreach ($this->document_xml->getElementsByTagName('qcm') as $qcm) {
             $code = $qcm->getElementsByTagName('code')->item(0)->nodeValue;
 
             if ($code == $this->code) {
                 $qcm->getElementsByTagName('termine')->item(0)->nodeValue = "true";
+                $qcm->getElementsByTagName('nom')->item(0)->nodeValue = $nom;
+                $qcm->getElementsByTagName('prenom')->item(0)->nodeValue = $prenom;
+                $qcm->getElementsByTagName('num-etudiant')->item(0)->nodeValue = $numEtudiant;
             }
         }
 

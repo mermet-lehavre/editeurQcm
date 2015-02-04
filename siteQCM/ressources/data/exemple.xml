@@ -9,6 +9,7 @@
 			<code>TOTO</code>
 			<nom/>
 			<prenom/>
+			<num-etudiant/>
 			<note/>
 		</etudiant>
 		<termine/>
@@ -96,6 +97,7 @@
 			<code>TITI</code>
 			<nom/>
 			<prenom/>
+			<num-etudiant/>
 			<note/>
 		</etudiant>
 		<termine/>
