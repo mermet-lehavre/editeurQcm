@@ -18,6 +18,13 @@ class XMLTools
         $this->code = $code;
     }
 
+    function checkPassword($pwd) {
+        $password = $this->document_xml->getElementsByTagName('password')->item(0)->nodeValue;
+        if($pwd === $password)
+            return true;
+        return false;
+    }
+
     function searchQCM() {
         $titre = $this->document_xml->getElementsByTagName('titre-interro')->item(0)->nodeValue;
         $date = $this->document_xml->getElementsByTagName('date')->item(0)->nodeValue;
