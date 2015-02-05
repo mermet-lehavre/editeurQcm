@@ -25,6 +25,66 @@ class XMLTools
         return false;
     }
 
+    function showQCM() {
+        $qcms = array();
+
+        $titre = $this->document_xml->getElementsByTagName('titre-interro')->item(0)->nodeValue;
+        $date = $this->document_xml->getElementsByTagName('date')->item(0)->nodeValue;
+        $duree = $this->document_xml->getElementsByTagName('duree')->item(0)->nodeValue;
+        $avantPropos = $this->document_xml->getElementsByTagName('avant-propos')->item(0)->nodeValue;
+
+        $indexQCM = 0;
+
+        foreach ($this->document_xml->getElementsByTagName('qcm') as $qcm) {
+            if($qcm->getElementsByTagName('termine')->item(0)->nodeValue == "true") {
+                $nom = $qcm->getElementsByTagName('nom')->item(0)->nodeValue;
+                $prenom = $qcm->getElementsByTagName('prenom')->item(0)->nodeValue;
+                $note = $qcm->getElementsByTagName('note')->item(0)->nodeValue;
+                $etudiant = new Etudiant($nom, $prenom, $note);
+
+                $this->interro = new QCM($titre, $date, $duree, $avantPropos, $etudiant);
+                $indexPartie = 0;
+
+                foreach ($qcm->getElementsByTagName('partie') as $partie) {
+                    $titrePartie = $partie->getElementsByTagName('titre')->item(0)->nodeValue;
+                    $parties = new Partie($titrePartie);
+                    $indexQuestion = 0;
+
+                    foreach ($partie->getElementsByTagName('question') as $question) {
+                        $enonce = $question->getElementsByTagName('enonce')->item(0)->nodeValue;
+                        $idQuestion = $question->getAttribute('id');
+
+                        $questions = new Question($idQuestion, $enonce);
+                        $indexReponse = 0;
+
+                        foreach ($question->getElementsByTagName('reponse') as $reponse) {
+                            $proposition = $reponse->getElementsByTagName('proposition')->item(0)->nodeValue;
+                            $correct = $reponse->getElementsByTagName('correct')->item(0)->nodeValue;
+                            $choixEtudiant = $reponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue;
+                            $idReponse = $reponse->getAttribute('id');
+
+                        /*    if(isset($choixEtudiant)) {
+                                $choix = true;
+                            } else {
+                                $choix = false;
+                            }*/
+                            $reponses = new Reponse($idReponse, $proposition, $correct, $choixEtudiant);
+                            $questions->addReponse($indexReponse++, $reponses);
+                        }
+
+                        $parties->addQuestion($indexQuestion++, $questions);
+                    }
+
+                    $this->interro->addPartie($indexPartie++, $parties);
+                }
+
+                $qcms[$indexQCM++] = $this->interro;
+            }
+        }
+
+        return $qcms;
+    }
+
     function searchQCM() {
         $titre = $this->document_xml->getElementsByTagName('titre-interro')->item(0)->nodeValue;
         $date = $this->document_xml->getElementsByTagName('date')->item(0)->nodeValue;
@@ -83,6 +143,8 @@ class XMLTools
                         foreach($xmlQuestion->getElementsByTagName('reponse') as $xmlReponse) {
                             if ($xmlReponse->getAttribute('id') == $reponse->getId()) {
                                 $xmlReponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue = "true";
+                            } else {
+                                $xmlReponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue = "false";
                             }
                         }
                     }
