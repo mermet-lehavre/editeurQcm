@@ -22,20 +22,22 @@ if (!isset($qcm) || $qcm == NULL) {
     die();
 }
 
-foreach ($_POST as $key => $value) {
+foreach ($_POST as $key => $values) {
     if (strpos($key, "question") !== false) {
         $questions = explode("-", $key);
 
         $idQuestion = $questions[1];
-        $idReponse = $value;
+        foreach ($values as $value) {
+            $idReponse = $value;
 
-        foreach ($qcm->getParties() as $partie) {
-            $question = $partie->findQuestion($idQuestion);
-            if (isset($question) && $question != NULL) {
-                $reponse = $question->findReponse($idReponse);
-                if (isset($reponse) && $reponse != NULL) {
-                    $xmlTools->addReponse($question, $reponse);
-                    echo $question->getEnonce() . "=>" .$reponse->getProposition() . "<br />";
+            foreach ($qcm->getParties() as $partie) {
+                $question = $partie->findQuestion($idQuestion);
+                if (isset($question) && $question != NULL) {
+                    $reponse = $question->findReponse($idReponse);
+                    if (isset($reponse) && $reponse != NULL) {
+                        $xmlTools->addReponse($question, $reponse);
+                        echo $question->getEnonce() . "=>" . $reponse->getProposition() . "<br />";
+                    }
                 }
             }
         }

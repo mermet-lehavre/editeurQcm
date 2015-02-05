@@ -59,7 +59,7 @@ if (!isset($qcm) || $qcm == NULL) {
                     $idReponse = $reponse->getId();
                     $proposition = $reponse->getProposition();
                     $idInput = "reponse" . $idReponse . "q" . $idQuestion;
-                    echo "<input type='radio' name='question-" . $idQuestion . "' value='$idReponse' id='$idInput'/> <label for='$idInput'>$proposition</label> <br/>";
+                    echo "<input type='checkbox' name='question-" . $idQuestion . "[]' value='$idReponse' id='$idInput'/> <label for='$idInput'>$proposition</label> <br/>";
                 }
                 echo "</div>";
             }
