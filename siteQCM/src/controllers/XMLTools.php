@@ -63,12 +63,12 @@ class XMLTools
                             $choixEtudiant = $reponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue;
                             $idReponse = $reponse->getAttribute('id');
 
-                        /*    if(isset($choixEtudiant)) {
+                            if($choixEtudiant == "true") {
                                 $choix = true;
                             } else {
                                 $choix = false;
-                            }*/
-                            $reponses = new Reponse($idReponse, $proposition, $correct, $choixEtudiant);
+                            }
+                            $reponses = new Reponse($idReponse, $proposition, $correct, $choix);
                             $questions->addReponse($indexReponse++, $reponses);
                         }
 
@@ -143,8 +143,9 @@ class XMLTools
                         foreach($xmlQuestion->getElementsByTagName('reponse') as $xmlReponse) {
                             if ($xmlReponse->getAttribute('id') == $reponse->getId()) {
                                 $xmlReponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue = "true";
-                            } else {
-                                $xmlReponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue = "false";
+                                if($xmlReponse->getElementsByTagName('correct')->item(0)->nodeValue == "true") {
+                                    $qcm->getElementsByTagName('note')->item(0)->nodeValue = $qcm->getElementsByTagName('note')->item(0)->nodeValue + 1;
+                                }
                             }
                         }
                     }
