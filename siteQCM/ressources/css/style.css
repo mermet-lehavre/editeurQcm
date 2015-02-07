@@ -1,19 +1,29 @@
-body
-{
-    background-image: url("../img/z10.jpg");
+body {
+    background-color: #EEE;
 }
 
-p
-{
+p {
     color: black;
 }
 
-h1
-{
+h1 {
     color: navy;
 }
 
-.contenu
-{
+.contenu {
     color: black;
+}
+
+.form-qcm {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0px auto;
+}
+
+.form-qcm-heading {
+    margin-bottom: 10px;
+}
+
+.form-qcm .btn {
+    margin: 10px 0;
 }

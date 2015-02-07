@@ -1,2 +1,2 @@
 <?php
-header("Location: qcm/index.html");
+header("Location: qcm/index.php");

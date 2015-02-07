@@ -1,15 +1,3 @@
-<?php
-    if (isset($_GET['pwd'])) {
-        if($_GET['pwd'] == "wrong") {
-            $msg = "Mauvais mot de passe.";
-        } else {
-            $msg = "Veuillez entrer un mot de passe.";
-        }
-    } else {
-        $msg = null;
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -22,11 +10,16 @@
 <body>
 
 <div class="container">
-    <?php if(isset($msg)) echo ($msg);?>
-    <form action="listeQcm.php" method="post">
-        <label>password</label>
-        <input type="password" name="password" value="" />
-        <input type="submit" />
+    <form class="form-qcm" action="listeQcm.php" method="post">
+        <h2 class="form-qcm-heading">Partie Administrateur - Saisir le mot de passe</h2>
+        <input class="form-control" type="password" name="password" required/>
+        <input class="btn btn-primary btn-block" type="submit"/>
+
+        <?php
+        if (isset($_GET['pwd']) && $_GET['pwd'] == "wrong") {
+            echo "<div class='alert alert-danger' role='alert'><i class='glyphicon glyphicon-remove-sign'></i> Mot de passe incorrect</div>";
+        }
+        ?>
     </form>
 </div>
 

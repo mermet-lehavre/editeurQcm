@@ -95,37 +95,37 @@ class XMLTools
             $code = $qcm->getElementsByTagName('code')->item(0)->nodeValue;
 
             if ($code == $this->code) {
-                if ($qcm->getElementsByTagName('termine')->item(0)->nodeValue == "true")
-                    return NULL;
-                $etudiant = new Etudiant($code);
-                $this->interro = new QCM($titre, $date, $duree, $avantPropos, $etudiant);
-                $indexPartie = 0;
+                if ($qcm->getElementsByTagName('termine')->item(0)->nodeValue != "true") {
+                    $etudiant = new Etudiant($code);
+                    $this->interro = new QCM($titre, $date, $duree, $avantPropos, $etudiant);
+                    $indexPartie = 0;
 
-                foreach ($qcm->getElementsByTagName('partie') as $partie) {
-                    $titrePartie = $partie->getElementsByTagName('titre')->item(0)->nodeValue;
-                    $parties = new Partie($titrePartie);
-                    $indexQuestion = 0;
+                    foreach ($qcm->getElementsByTagName('partie') as $partie) {
+                        $titrePartie = $partie->getElementsByTagName('titre')->item(0)->nodeValue;
+                        $parties = new Partie($titrePartie);
+                        $indexQuestion = 0;
 
-                    foreach ($partie->getElementsByTagName('question') as $question) {
-                        $enonce = $question->getElementsByTagName('enonce')->item(0)->nodeValue;
-                        $idQuestion = $question->getAttribute('id');
+                        foreach ($partie->getElementsByTagName('question') as $question) {
+                            $enonce = $question->getElementsByTagName('enonce')->item(0)->nodeValue;
+                            $idQuestion = $question->getAttribute('id');
 
-                        $questions = new Question($idQuestion, $enonce);
-                        $indexReponse = 0;
+                            $questions = new Question($idQuestion, $enonce);
+                            $indexReponse = 0;
 
-                        foreach ($question->getElementsByTagName('reponse') as $reponse) {
-                            $proposition = $reponse->getElementsByTagName('proposition')->item(0)->nodeValue;
-                            $correct = $reponse->getElementsByTagName('correct')->item(0)->nodeValue;
-                            $idReponse = $reponse->getAttribute('id');
+                            foreach ($question->getElementsByTagName('reponse') as $reponse) {
+                                $proposition = $reponse->getElementsByTagName('proposition')->item(0)->nodeValue;
+                                $correct = $reponse->getElementsByTagName('correct')->item(0)->nodeValue;
+                                $idReponse = $reponse->getAttribute('id');
 
-                            $reponses = new Reponse($idReponse, $proposition, $correct);
-                            $questions->addReponse($indexReponse++, $reponses);
+                                $reponses = new Reponse($idReponse, $proposition, $correct);
+                                $questions->addReponse($indexReponse++, $reponses);
+                            }
+
+                            $parties->addQuestion($indexQuestion++, $questions);
                         }
 
-                        $parties->addQuestion($indexQuestion++, $questions);
+                        $this->interro->addPartie($indexPartie++, $parties);
                     }
-
-                    $this->interro->addPartie($indexPartie++, $parties);
                 }
                 return $this->interro;
             }

@@ -7,11 +7,6 @@ require_once("../src/model/Partie.php");
 require_once("../src/model/Question.php");
 require_once("../src/model/Reponse.php");
 
-if (!isset($_POST["code"])) {
-    header("Location: index.html");
-    die();
-}
-
 /*
  * Traitement du code
  */
@@ -21,7 +16,7 @@ $xmlTools->setCode($_POST["code"]);
 $qcm = $xmlTools->searchQCM();
 
 if (!isset($qcm) || $qcm == NULL) {
-    header("Location: index.html");
+    header("Location: index.php?err=null");
     die();
 }
 ?>

@@ -8,7 +8,7 @@ require_once("../model/Question.php");
 require_once("../model/Reponse.php");
 
 if (!isset($_POST['code']) || $_POST['code'] == NULL) {
-    header("Location: index.php");
+    header("Location: ../../qcm/index.php?err=null");
     die();
 }
 
@@ -18,7 +18,7 @@ $qcm = $xmlTools->searchQCM();
 
 
 if (!isset($qcm) || $qcm == NULL) {
-    header("Location: index.php");
+    header("Location: ../../qcm/index.php?err=null");
     die();
 }
 
@@ -36,7 +36,6 @@ foreach ($_POST as $key => $values) {
                     $reponse = $question->findReponse($idReponse);
                     if (isset($reponse) && $reponse != NULL) {
                         $xmlTools->addReponse($question, $reponse);
-                        echo $question->getEnonce() . "=>" . $reponse->getProposition() . "<br />";
                     }
                 }
             }
@@ -45,5 +44,7 @@ foreach ($_POST as $key => $values) {
 }
 
 $xmlTools->submitQCM($_POST['nom'], $_POST['prenom'], $_POST['numEtudiant']);
+
+header("Location: ../../qcm/index.php?success=true");
 
 ?>

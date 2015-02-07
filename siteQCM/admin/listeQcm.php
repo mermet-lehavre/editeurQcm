@@ -2,11 +2,6 @@
 // traitement du password + affichage des qcm
 require_once("../src/controllers/XMLTools.php");
 
-if (!isset($_POST['password']) || $_POST['password'] == NULL) {
-    header("Location: index.php?pwd=empty");
-    die();
-}
-
 $xmlTools = new XMLTools("../ressources/data/admin.xml");
 
 if(!$xmlTools->checkPassword($_POST['password'])) {
