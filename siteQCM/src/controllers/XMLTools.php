@@ -40,7 +40,8 @@ class XMLTools
                 $nom = $qcm->getElementsByTagName('nom')->item(0)->nodeValue;
                 $prenom = $qcm->getElementsByTagName('prenom')->item(0)->nodeValue;
                 $note = $qcm->getElementsByTagName('note')->item(0)->nodeValue;
-                $etudiant = new Etudiant($nom, $prenom, $note);
+                $numero = $qcm->getElementsByTagName('num-etudiant')->item(0)->nodeValue;
+                $etudiant = new Etudiant($nom, $prenom, $note, $numero);
 
                 $this->interro = new QCM($titre, $date, $duree, $avantPropos, $etudiant);
                 $indexPartie = 0;
@@ -144,7 +145,7 @@ class XMLTools
                             if ($xmlReponse->getAttribute('id') == $reponse->getId()) {
                                 $xmlReponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue = "true";
                                 if($xmlReponse->getElementsByTagName('correct')->item(0)->nodeValue == "true") {
-                                    $qcm->getElementsByTagName('note')->item(0)->nodeValue = $qcm->getElementsByTagName('note')->item(0)->nodeValue + 1;
+                                    $qcm->getElementsByTagName('note')->item(0)->nodeValue += 1;
                                 }
                             }
                         }

@@ -38,6 +38,8 @@ $qcms = $xmlTools->showQCM();
             echo '<br/>';
             echo $qcm->getEtudiant()->getPrenom();
             echo '<br/>';
+            echo $qcm->getEtudiant()->getNumero();
+            echo '<br/>';
             echo $qcm->getEtudiant()->getNote();
             echo '<br/>';
 

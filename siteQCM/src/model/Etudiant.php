@@ -6,6 +6,7 @@ class Etudiant {
     private $nom;
     private $prenom;
     private $note;
+    private $numero;
 
     public function __construct() {
         $a = func_get_args();
@@ -19,10 +20,11 @@ class Etudiant {
         $this->code = $code;
     }
 
-    public function __construct3($nom, $prenom, $note) {
+    public function __construct4($nom, $prenom, $note, $numero) {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->note = $note;
+        $this->numero = $numero;
     }
 
     public function getCode() {
@@ -51,6 +53,14 @@ class Etudiant {
 
     public function setNote($note) {
         $this->note = $note;
+    }
+
+    public function getNumero() {
+        return $this->numero;
+    }
+
+    public function setNumero($numero) {
+        $this->numero = $numero;
     }
 
 }
