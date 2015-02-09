@@ -144,13 +144,37 @@ class XMLTools
                         foreach($xmlQuestion->getElementsByTagName('reponse') as $xmlReponse) {
                             if ($xmlReponse->getAttribute('id') == $reponse->getId()) {
                                 $xmlReponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue = "true";
-                                if($xmlReponse->getElementsByTagName('correct')->item(0)->nodeValue == "true") {
-                                    $qcm->getElementsByTagName('note')->item(0)->nodeValue += 1;
-                                }
                             }
                         }
                     }
                 }
+            }
+        }
+    }
+
+    function addNote() {
+        foreach ($this->document_xml->getElementsByTagName('qcm') as $qcm) {
+            $code = $qcm->getElementsByTagName('code')->item(0)->nodeValue;
+
+            if ($code == $this->code) {
+                $note = 0;
+                $nbQuestion = 0;
+                foreach ($qcm->getElementsByTagName('question') as $question) {
+                    $nbQuestion++;
+                    $reponseCorrect = true;
+                    foreach ($question->getElementsByTagName('reponse') as $reponse) {
+                        $correct = $reponse->getElementsByTagName('correct')->item(0)->nodeValue;
+                        $choixEtudiant = $reponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue;
+                        if ($correct == "true" && $choixEtudiant == "" || $correct == "false" && $choixEtudiant == "true") {
+                            $reponseCorrect = false;
+                        }
+                    }
+
+                    if ($reponseCorrect) {
+                        $note +=1;
+                    }
+                }
+                $qcm->getElementsByTagName('note')->item(0)->nodeValue = $note * 20 / $nbQuestion;
             }
         }
     }
@@ -168,6 +192,5 @@ class XMLTools
         }
 
         $this->document_xml->save($this->fichier);
-        echo "SAUVEGARDE du fichier " . $this->fichier;
     }
 }

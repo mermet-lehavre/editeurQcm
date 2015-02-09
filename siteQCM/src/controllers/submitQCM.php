@@ -43,6 +43,7 @@ foreach ($_POST as $key => $values) {
     }
 }
 
+$xmlTools->addNote();
 $xmlTools->submitQCM($_POST['nom'], $_POST['prenom'], $_POST['numEtudiant']);
 
 header("Location: ../../qcm/index.php?success=true");
