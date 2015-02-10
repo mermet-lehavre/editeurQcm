@@ -2,11 +2,7 @@ package org.mermet.editeurQcm.interro.ihm;
 
 import java.awt.BorderLayout;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 import org.mermet.editeurQcm.donnees.Matiere;
 import org.mermet.editeurQcm.interro.donnees.PartieStructure;
@@ -31,8 +27,12 @@ public abstract class DialogueCreationPartie extends JDialog {
 		partie = new PartieStructure("", 0);
 		titrePartie = new JTextField(40);
 		saisieNbQuestions = new JTextField(4);
-		enTete.add(titrePartie);
-		enTete.add(saisieNbQuestions);
+        JLabel txtTitrePartie = new JLabel("Titre Partie");
+        JLabel txtNbQuestions = new JLabel("Nombre Questions");
+        enTete.add(txtTitrePartie);
+        enTete.add(titrePartie);
+        enTete.add(txtNbQuestions);
+        enTete.add(saisieNbQuestions);
 		add(enTete, BorderLayout.NORTH);
 		init();
 		JButton valider = new JButton("Valider");

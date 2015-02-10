@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<interro>
+    <titre-interro>Titre interro</titre-interro>
+    <date>date</date>
+    <duree>durée</duree>
+    <avant-propos/>
+    <qcm>
+        <etudiant>
+            <code>22309</code>
+            <nom/>
+            <prenom/>
+            <note/>
+        </etudiant>
+        <termine/>
+        <partie>
+            <titre>Partie 1</titre>
+            <question>
+                <enonce>Quelle balise permet d'insérer des instructions Java dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>&lt;% . . . %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Aucune balise. Le code java est reconnu et exécuté automatiquement.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;?java . . . %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;java&gt; . . . &lt;/java&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;? . . . ?&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quel est le rôle de la balise &lt;%= . . . %&gt; ?</enonce>
+                <reponse>
+                    <proposition>Effectuer un 'import' java</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Mettre une partie du code en commentaire</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Afficher la valeur d'une expression java</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Cette balise n'existe pas.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Comparer 2 valeurs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Que signifie le sigle JSP ?</enonce>
+                <reponse>
+                    <proposition>JSP Server Pages</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Just-in-time Service Provider</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Java and Servlet Programs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Just Super PHP</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Java Server Pages</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quelles sont les variables implicites disponibles dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>session</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>request</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>out</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>servlet</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>db</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+        </partie>
+        <partie>
+            <titre>Partie 2</titre>
+            <question>
+                <enonce>Quelles sont les variables implicites disponibles dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>session</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>db</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>servlet</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>request</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>out</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quelle balise permet d'insérer des instructions Java dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>&lt;java&gt; . . . &lt;/java&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Aucune balise. Le code java est reconnu et exécuté automatiquement.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;?java . . . %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;? . . . ?&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;% . . . %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quel est le rôle de la balise &lt;%= . . . %&gt; ?</enonce>
+                <reponse>
+                    <proposition>Comparer 2 valeurs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Mettre une partie du code en commentaire</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Effectuer un 'import' java</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Cette balise n'existe pas.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Afficher la valeur d'une expression java</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+        </partie>
+    </qcm>
+    <qcm>
+        <etudiant>
+            <code>21046</code>
+            <nom/>
+            <prenom/>
+            <note/>
+        </etudiant>
+        <termine/>
+        <partie>
+            <titre>Partie 1</titre>
+            <question>
+                <enonce>Quelle balise permet d'insérer des instructions Java dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>&lt;% . . . %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;java&gt; . . . &lt;/java&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;? . . . ?&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;?java . . . %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Aucune balise. Le code java est reconnu et exécuté automatiquement.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Que signifie le sigle JSP ?</enonce>
+                <reponse>
+                    <proposition>Java Server Pages</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Just-in-time Service Provider</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>JSP Server Pages</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Just Super PHP</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Java and Servlet Programs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Comment peut-on importer plusieurs packages dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>&lt;%! import package 1 ; import package 2%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%@ page import='package1'%&gt; &lt;%@ page import='package2' %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;% import package1 ; import package 2%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%@ java-import='package1,package2' %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%= import package='package1' package = 'package2'%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quelles sont les variables implicites disponibles dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>servlet</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>request</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>out</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>session</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>db</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+        </partie>
+        <partie>
+            <titre>Partie 2</titre>
+            <question>
+                <enonce>Quelle balise permet d'insérer des instructions Java dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>&lt;% . . . %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;?java . . . %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Aucune balise. Le code java est reconnu et exécuté automatiquement.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;? . . . ?&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;java&gt; . . . &lt;/java&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Que signifie le sigle JSP ?</enonce>
+                <reponse>
+                    <proposition>Just Super PHP</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>JSP Server Pages</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Java and Servlet Programs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Just-in-time Service Provider</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Java Server Pages</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Comment peut-on importer plusieurs packages dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>&lt;% import package1 ; import package 2%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%! import package 1 ; import package 2%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%= import package='package1' package = 'package2'%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%@ page import='package1'%&gt; &lt;%@ page import='package2' %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%@ java-import='package1,package2' %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+        </partie>
+    </qcm>
+    <qcm>
+        <etudiant>
+            <code>16890</code>
+            <nom/>
+            <prenom/>
+            <note/>
+        </etudiant>
+        <termine/>
+        <partie>
+            <titre>Partie 1</titre>
+            <question>
+                <enonce>Que signifie le sigle JSP ?</enonce>
+                <reponse>
+                    <proposition>Java and Servlet Programs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Just Super PHP</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>JSP Server Pages</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Just-in-time Service Provider</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Java Server Pages</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quel est le rôle de la balise &lt;%= . . . %&gt; ?</enonce>
+                <reponse>
+                    <proposition>Effectuer un 'import' java</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Mettre une partie du code en commentaire</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Cette balise n'existe pas.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Comparer 2 valeurs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Afficher la valeur d'une expression java</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quelles sont les variables implicites disponibles dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>out</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>session</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>db</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>request</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>servlet</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quelle balise permet d'insérer des instructions Java dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>Aucune balise. Le code java est reconnu et exécuté automatiquement.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;java&gt; . . . &lt;/java&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;? . . . ?&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;?java . . . %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;% . . . %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+        </partie>
+        <partie>
+            <titre>Partie 2</titre>
+            <question>
+                <enonce>Quelle balise permet d'insérer des instructions Java dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>&lt;?java . . . %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;java&gt; . . . &lt;/java&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Aucune balise. Le code java est reconnu et exécuté automatiquement.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;% . . . %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;? . . . ?&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Comment peut-on importer plusieurs packages dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>&lt;%@ page import='package1'%&gt; &lt;%@ page import='package2' %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%! import package 1 ; import package 2%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%@ java-import='package1,package2' %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;% import package1 ; import package 2%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%= import package='package1' package = 'package2'%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quelles sont les variables implicites disponibles dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>session</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>request</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>servlet</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>out</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>db</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+        </partie>
+    </qcm>
+    <qcm>
+        <etudiant>
+            <code>70195</code>
+            <nom/>
+            <prenom/>
+            <note/>
+        </etudiant>
+        <termine/>
+        <partie>
+            <titre>Partie 1</titre>
+            <question>
+                <enonce>Quel est le rôle de la balise &lt;%= . . . %&gt; ?</enonce>
+                <reponse>
+                    <proposition>Comparer 2 valeurs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Effectuer un 'import' java</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Cette balise n'existe pas.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Afficher la valeur d'une expression java</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Mettre une partie du code en commentaire</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quelles sont les variables implicites disponibles dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>db</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>request</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>out</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>session</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>servlet</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quelle balise permet d'insérer des instructions Java dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>Aucune balise. Le code java est reconnu et exécuté automatiquement.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;java&gt; . . . &lt;/java&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;? . . . ?&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;% . . . %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;?java . . . %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Que signifie le sigle JSP ?</enonce>
+                <reponse>
+                    <proposition>Just Super PHP</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Java and Servlet Programs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>JSP Server Pages</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Just-in-time Service Provider</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Java Server Pages</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+        </partie>
+        <partie>
+            <titre>Partie 2</titre>
+            <question>
+                <enonce>Que signifie le sigle JSP ?</enonce>
+                <reponse>
+                    <proposition>Java Server Pages</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Just-in-time Service Provider</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Just Super PHP</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Java and Servlet Programs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>JSP Server Pages</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Comment peut-on importer plusieurs packages dans une JSP ?</enonce>
+                <reponse>
+                    <proposition>&lt;%@ page import='package1'%&gt; &lt;%@ page import='package2' %&gt;</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%= import package='package1' package = 'package2'%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%! import package 1 ; import package 2%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;% import package1 ; import package 2%&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>&lt;%@ java-import='package1,package2' %&gt;</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+            <question>
+                <enonce>Quel est le rôle de la balise &lt;%= . . . %&gt; ?</enonce>
+                <reponse>
+                    <proposition>Effectuer un 'import' java</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Comparer 2 valeurs</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Afficher la valeur d'une expression java</proposition>
+                    <correct>true</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Mettre une partie du code en commentaire</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+                <reponse>
+                    <proposition>Cette balise n'existe pas.</proposition>
+                    <correct>false</correct>
+                    <choix-etudiant/>
+                </reponse>
+            </question>
+        </partie>
+    </qcm>
+</interro>

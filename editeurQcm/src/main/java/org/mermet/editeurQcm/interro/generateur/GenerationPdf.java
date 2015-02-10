@@ -1,4 +1,4 @@
-package org.mermet.editeurQcm.interro.pdf;
+package org.mermet.editeurQcm.interro.generateur;
 
 import java.io.File;
 import java.io.FileOutputStream;

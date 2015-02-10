@@ -16,9 +16,8 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import org.mermet.editeurQcm.ihm.fenetre.FenetrePrincipale;
 import org.mermet.editeurQcm.interro.donnees.StructureQcm;
-import org.mermet.editeurQcm.interro.pdf.GenerationPdf;
+import org.mermet.editeurQcm.interro.generateur.GenerationPdf;
 
 public class DialogueParametresCopie extends JDialog {
 	private JSpinner saisieNombre;
