@@ -1,8 +1,8 @@
 package org.mermet.editeurQcm.interro.donnees;
 
-import java.util.List;
-
 import org.mermet.editeurQcm.donnees.Question;
+
+import java.util.List;
 
 public class PartieStructure {
 	private String titre;
@@ -26,6 +26,10 @@ public class PartieStructure {
 	
 	public String getTitre() {
 		return titre;
+	}
+
+	public int getNbQuestions() {
+		return nbQuestions;
 	}
 	
 	public String getResume() {

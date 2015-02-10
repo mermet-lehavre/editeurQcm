@@ -1,13 +1,12 @@
 package org.mermet.editeurQcm.donnees;
 
-import java.beans.PropertyChangeListener;
+import org.jdom2.Element;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-
-import org.jdom2.Element;
 
 /**                                                                                                                                                                    
  *                                                                                                                                                                     

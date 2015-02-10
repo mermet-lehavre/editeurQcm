@@ -60,7 +60,7 @@ if (!isset($qcm) || $qcm == NULL) {
             }
         }
         ?>
-        <input type="submit" value="Envoyer"/>
+        <input type="submit" value="Envoyer" onclick="return confirm('Etes-vous sur de vouloir valider le QCM ?')"/>
     </form>
 
     <footer>
