@@ -5,3 +5,7 @@ target/
 # IntelliJ config
 .idea/
 *.iml
+.project
+bin/
+.project
+.settings/

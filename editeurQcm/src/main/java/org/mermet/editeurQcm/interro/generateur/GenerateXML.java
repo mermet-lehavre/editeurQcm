@@ -9,6 +9,7 @@ import org.mermet.editeurQcm.interro.donnees.IQcm;
 import org.mermet.editeurQcm.interro.donnees.PartieQcm;
 import org.mermet.editeurQcm.interro.donnees.Qcm;
 import org.mermet.editeurQcm.interro.donnees.StructureQcm;
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -22,6 +23,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.util.List;
+
 
 
 public class GenerateXML {
@@ -57,15 +59,20 @@ public class GenerateXML {
 
         for (int i = 1; i <= nbCopies; i++) {
             IQcm qcm = new Qcm(structure);
-
+            int j = 0;
+            
             Element eQcm = preambuleQCM(racine);
             List<PartieQcm> liste = qcm.getListeParties();
             for (PartieQcm partie : liste) {
                 Element ePartie = afficherPartie(eQcm, partie.getTitre());
 
-                for (Question question : partie.getQuestions()) {
-                    Element eQuestion = afficherQuestion(ePartie, question.getEnonce());
-                    question.getPropositionsAleatoires().stream().forEach(reponse -> afficherReponse(eQuestion, reponse));
+                for(Question question : partie.getQuestions()) {
+                	Element eQuestion = afficherQuestion(ePartie, question.getEnonce(), ++j);
+                	
+                	int k = 0;
+                	for(Reponse reponse : question.getPropositionsAleatoires()) {
+                		afficherReponse(eQuestion, reponse, ++k);
+                	}
                 }
             }
         }
@@ -121,6 +128,9 @@ public class GenerateXML {
 
         Element prenom = doc.createElement("prenom");
         etudiant.appendChild(prenom);
+        
+        Element numEtudiant = doc.createElement("num-etudiant");
+        etudiant.appendChild(numEtudiant);
 
         Element note = doc.createElement("note");
         etudiant.appendChild(note);
@@ -142,9 +152,13 @@ public class GenerateXML {
         return partie;
     }
 
-    private Element afficherQuestion(Element ePartie, String enonce) {
+    private Element afficherQuestion(Element ePartie, String enonce, int id) {
         Element question = doc.createElement("question");
         ePartie.appendChild(question);
+        
+        Attr idQuestion = doc.createAttribute("id");
+        idQuestion.setValue(String.valueOf(id));
+        question.setAttributeNode(idQuestion);
 
         Element eEnonce = doc.createElement("enonce");
         eEnonce.appendChild(doc.createTextNode(enonce));
@@ -153,9 +167,13 @@ public class GenerateXML {
         return question;
     }
 
-    private void afficherReponse(Element eQuestion, Reponse reponse) {
+    private void afficherReponse(Element eQuestion, Reponse reponse, int id) {
         Element eReponse = doc.createElement("reponse");
         eQuestion.appendChild(eReponse);
+        
+        Attr idReponse = doc.createAttribute("id");
+        idReponse.setValue(String.valueOf(id));
+        eReponse.setAttributeNode(idReponse);
 
         Element eProposition = doc.createElement("proposition");
         eProposition.appendChild(doc.createTextNode(reponse.getProposition()));

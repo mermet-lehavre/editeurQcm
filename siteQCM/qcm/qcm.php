@@ -11,7 +11,7 @@ require_once("../src/model/Reponse.php");
  * Traitement du code
  */
 
-$xmlTools = new XMLTools("../ressources/data/exemple.xml");
+$xmlTools = new XMLTools("../ressources/data/qcm.xml");
 $xmlTools->setCode($_POST["code"]);
 $qcm = $xmlTools->searchQCM();
 
@@ -41,8 +41,9 @@ if (!isset($qcm) || $qcm == NULL) {
 
         <input type="hidden" name="code" value="<?php echo $qcm->getEtudiant()->getCode(); ?>"/>
 
-        <?php
+        <h3><?php echo $qcm->getAvantPropos() ?></h3>
 
+        <?php
         foreach ($qcm->getParties() as $partie) {
             echo "<p class='contenu'>" . $partie->getTitrePartie() . "</p>";
 

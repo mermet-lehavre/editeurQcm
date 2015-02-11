@@ -12,7 +12,7 @@ if (!isset($_POST['code']) || $_POST['code'] == NULL) {
     die();
 }
 
-$xmlTools = new XMLTools("../../ressources/data/exemple.xml");
+$xmlTools = new XMLTools("../../ressources/data/qcm.xml");
 $xmlTools->setCode($_POST["code"]);
 $qcm = $xmlTools->searchQCM();
 
