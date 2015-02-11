@@ -15,7 +15,7 @@ require_once("../src/model/Partie.php");
 require_once("../src/model/Question.php");
 require_once("../src/model/Reponse.php");
 
-$xmlTools = new XMLTools("../ressources/data/exemple.xml");
+$xmlTools = new XMLTools("../ressources/data/qcm.xml");
 
 $qcms = $xmlTools->showQCM();
 
