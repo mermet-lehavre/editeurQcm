@@ -174,7 +174,8 @@ class XMLTools
                         $note +=1;
                     }
                 }
-                $qcm->getElementsByTagName('note')->item(0)->nodeValue = $note * 20 / $nbQuestion;
+                $noteReel = $note * 20 / $nbQuestion;
+                $qcm->getElementsByTagName('note')->item(0)->nodeValue = round($noteReel, 1);
             }
         }
     }

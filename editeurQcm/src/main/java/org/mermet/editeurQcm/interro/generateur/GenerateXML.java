@@ -3,18 +3,6 @@
  */
 package org.mermet.editeurQcm.interro.generateur;
 
-import java.io.File;
-import java.util.*;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
 import org.mermet.editeurQcm.donnees.Question;
 import org.mermet.editeurQcm.donnees.Reponse;
 import org.mermet.editeurQcm.interro.donnees.IQcm;
@@ -24,15 +12,23 @@ import org.mermet.editeurQcm.interro.donnees.StructureQcm;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
+import java.util.List;
+
 
 public class GenerateXML {
 
     private StructureQcm structure;
     private File fichierSortie;
     private int nbCopies;
-
-    private DocumentBuilderFactory docFactory;
-    private DocumentBuilder docBuilder;
 
     // Def Element
     private Document doc;
@@ -42,21 +38,15 @@ public class GenerateXML {
         fichierSortie = monFichierSortie;
         nbCopies = monNbCopies;
 
-        docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         try {
-            docBuilder = docFactory.newDocumentBuilder();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            doc = docBuilder.newDocument();
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         }
-        doc = docBuilder.newDocument();
     }
 
-    /**
-     * @param doc
-     * @param parent
-     * @param fils
-     * @param content
-     */
     private void simpleElement(Document doc, Element parent, Element fils, String content) {
         fils.appendChild(doc.createTextNode(content));
         parent.appendChild(fils);
