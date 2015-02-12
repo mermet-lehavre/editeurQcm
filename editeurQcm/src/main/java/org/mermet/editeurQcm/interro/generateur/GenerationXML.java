@@ -26,18 +26,18 @@ import java.util.List;
 
 
 
-public class GenerateXML {
+public class GenerationXML {
 
     private StructureQcm structure;
-    private File fichierSortie;
+    private File dossierSortie;
     private int nbCopies;
 
     // Def Element
     private Document doc;
 
-    public GenerateXML(File monFichierSortie, StructureQcm maStructure, Integer monNbCopies) {
+    public GenerationXML(File monDossierSortie, StructureQcm maStructure, Integer monNbCopies) {
         structure = maStructure;
-        fichierSortie = monFichierSortie;
+        dossierSortie = monDossierSortie;
         nbCopies = monNbCopies;
 
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -85,7 +85,7 @@ public class GenerateXML {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(fichierSortie);
+            StreamResult result = new StreamResult(new File(dossierSortie + "/qcm.xml"));
 
             transformer.transform(source, result);
         } catch (TransformerException e) {

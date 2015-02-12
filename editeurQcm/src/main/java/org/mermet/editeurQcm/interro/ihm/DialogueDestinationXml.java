@@ -4,24 +4,12 @@
 
 package org.mermet.editeurQcm.interro.ihm;
 
-import java.awt.BorderLayout;
-import java.awt.Frame;
-import java.awt.FlowLayout;
-import java.io.File;
-
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.JTextField;
-import javax.swing.SpinnerNumberModel;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
 import org.mermet.editeurQcm.interro.donnees.StructureQcm;
-import org.mermet.editeurQcm.interro.generateur.GenerateXML;
+import org.mermet.editeurQcm.interro.generateur.GenerationXML;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 
 public class DialogueDestinationXml extends JDialog {
     private JSpinner saisieNombre;
@@ -29,12 +17,11 @@ public class DialogueDestinationXml extends JDialog {
     private JButton naviguer;
     private JButton valider;
     private JButton annuler;
-    private File fichierChoisi;
+    private File dossierChoisi;
     private StructureQcm structureQcm;
 
     public DialogueDestinationXml(StructureQcm maStructure) {
         super((Frame) null, "Paramètres", true);
-        fichierChoisi = new File("qcm.xml");
         structureQcm = maStructure;
         init();
         pack();
@@ -49,7 +36,6 @@ public class DialogueDestinationXml extends JDialog {
         JLabel labelFichier = new JLabel("Fichier XML cible : ");
         nomFichier = new JTextField(20);
         nomFichier.setEditable(false);
-        nomFichier.setText(fichierChoisi.getName());
         naviguer = new JButton("Naviguer");
         valider = new JButton("Valider");
         annuler = new JButton("Annuler");
@@ -79,19 +65,19 @@ public class DialogueDestinationXml extends JDialog {
         naviguer.addActionListener(
                 ae -> {
                     JFileChooser selecteur = new JFileChooser();
-                    selecteur.setFileFilter(new FileNameExtensionFilter("xml", "xml"));
+                    selecteur.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                     selecteur.setSelectedFile(new File("qcm.xml"));
                     int selection = selecteur.showSaveDialog(this);
                     if (selection == JFileChooser.APPROVE_OPTION) {
-                        fichierChoisi = selecteur.getSelectedFile();
-                        nomFichier.setText(fichierChoisi.getName());
+                        dossierChoisi = selecteur.getSelectedFile();
+                        nomFichier.setText(dossierChoisi.toString());
                     }
                 }
         );
         annuler.addActionListener(ae -> dispose());
 
         valider.addActionListener(e -> {
-            GenerateXML generateur = new GenerateXML(fichierChoisi,
+            GenerationXML generateur = new GenerationXML(dossierChoisi,
                     structureQcm,
                     (Integer) saisieNombre.getValue());
             generateur.generer();
