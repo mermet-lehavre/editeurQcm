@@ -28,6 +28,7 @@ public class ActionCreerInterro extends ActionPerso {
         DialogueInterro dialogue = new DialogueInterro(matiere);
         ActionGenererDevoir.getInstance().setEnabled(true);
         ActionGenererXml.getInstance().setEnabled(true);
+        ActionGenererSite.getInstance().setEnabled(true);
     }
 
 }

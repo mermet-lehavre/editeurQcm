@@ -13,6 +13,7 @@ import org.mermet.editeurQcm.ihm.actions.generales.ActionNouveau;
 import org.mermet.editeurQcm.ihm.actions.generales.ActionOuvrir;
 import org.mermet.editeurQcm.ihm.actions.interro.ActionCreerInterro;
 import org.mermet.editeurQcm.ihm.actions.interro.ActionGenererDevoir;
+import org.mermet.editeurQcm.ihm.actions.interro.ActionGenererSite;
 import org.mermet.editeurQcm.ihm.actions.interro.ActionGenererXml;
 
 @SuppressWarnings("serial")
@@ -62,6 +63,8 @@ public class FenetrePrincipale extends JFrame {
 		menuInterro.add(creer1qcm);
         JMenuItem genererXml = new JMenuItem(ActionGenererXml.getInstance());
         menuInterro.add(genererXml);
+        JMenuItem genererSite = new JMenuItem(ActionGenererSite.getInstance());
+        menuInterro.add(genererSite);
 		
 		barre.add(menuFichier);
 		barre.add(menuEditer);

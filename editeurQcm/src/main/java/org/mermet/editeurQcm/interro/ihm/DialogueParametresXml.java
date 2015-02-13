@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
-public class DialogueDestinationXml extends JDialog {
+public class DialogueParametresXml extends JDialog {
     private JSpinner saisieNombre;
     private JTextField nomFichier;
     private JButton naviguer;
@@ -20,7 +20,7 @@ public class DialogueDestinationXml extends JDialog {
     private File dossierChoisi;
     private StructureQcm structureQcm;
 
-    public DialogueDestinationXml(StructureQcm maStructure) {
+    public DialogueParametresXml(StructureQcm maStructure) {
         super((Frame) null, "Paramètres", true);
         structureQcm = maStructure;
         init();
@@ -33,11 +33,12 @@ public class DialogueDestinationXml extends JDialog {
         JLabel labelNombre = new JLabel("Nombre des étudiants : ");
         SpinnerNumberModel modeleNombre = new SpinnerNumberModel(1, 1, 500, 1);
         saisieNombre = new JSpinner(modeleNombre);
-        JLabel labelFichier = new JLabel("Fichier XML cible : ");
+        JLabel labelFichier = new JLabel("Dossier cible : ");
         nomFichier = new JTextField(20);
         nomFichier.setEditable(false);
         naviguer = new JButton("Naviguer");
         valider = new JButton("Valider");
+        valider.setEnabled(false);
         annuler = new JButton("Annuler");
 
 		/* Dessin du panneau des paramètres */
@@ -71,6 +72,7 @@ public class DialogueDestinationXml extends JDialog {
                     if (selection == JFileChooser.APPROVE_OPTION) {
                         dossierChoisi = selecteur.getSelectedFile();
                         nomFichier.setText(dossierChoisi.toString());
+                        valider.setEnabled(true);
                     }
                 }
         );
