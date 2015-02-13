@@ -54,15 +54,6 @@ public class DialogueParametresCopie extends DialogueParametres {
     }
 
     @Override
-    protected void dessinDesPanneauxControle() {
-        JPanel panneauCommandes = new JPanel();
-        panneauCommandes.add(valider);
-        panneauCommandes.add(annuler);
-        this.getRootPane().setDefaultButton(valider);
-        add(panneauCommandes, BorderLayout.SOUTH);
-    }
-
-    @Override
     protected void ajoutBoutons() {
         naviguer.addActionListener(
                 ae -> {

@@ -27,25 +27,21 @@ public class DialogueParametresSite extends DialogueParametres {
     }
 
     @Override
-    protected void dessinDesPanneauxControle() {
-
-    }
-
-    @Override
     protected void ajoutBoutons() {
         naviguer.addActionListener(
                 ae -> {
                     JFileChooser selecteur = new JFileChooser();
-                    selecteur.setFileFilter(new FileNameExtensionFilter("pdf", "pdf"));
-                    selecteur.setSelectedFile(new File("qcm.pdf"));
+                    selecteur.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                     int selection = selecteur.showSaveDialog(this);
                     if (selection == JFileChooser.APPROVE_OPTION) {
                         fichierChoisi = selecteur.getSelectedFile();
-                        nomFichier.setText(fichierChoisi.getName());
+                        nomFichier.setText(fichierChoisi.toString());
+                        valider.setEnabled(true);
                     }
                 }
         );
         annuler.addActionListener(ae -> dispose());
+
         valider.addActionListener(e -> {
             File dossierXML = new File("../siteQCM/ressources/data");
             GenerationXML generateurXml = new GenerationXML(dossierXML, structureQcm, (Integer) saisieNombre.getValue());

@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
-
 public abstract class DialogueParametres extends JDialog {
 
     protected JSpinner saisieNombre;
@@ -38,7 +37,13 @@ public abstract class DialogueParametres extends JDialog {
 
     protected abstract void dessinDesPanneauxParametres();
 
-    protected abstract void dessinDesPanneauxControle();
+    protected void dessinDesPanneauxControle() {
+        JPanel panneauCommandes = new JPanel();
+        panneauCommandes.add(valider);
+        panneauCommandes.add(annuler);
+        this.getRootPane().setDefaultButton(valider);
+        add(panneauCommandes, BorderLayout.SOUTH);
+    }
 
     protected abstract void ajoutBoutons();
 }

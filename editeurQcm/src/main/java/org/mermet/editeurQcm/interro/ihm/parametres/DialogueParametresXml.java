@@ -48,21 +48,11 @@ public class DialogueParametresXml extends DialogueParametres {
     }
 
     @Override
-    protected void dessinDesPanneauxControle() {
-        JPanel panneauCommandes = new JPanel();
-        panneauCommandes.add(valider);
-        panneauCommandes.add(annuler);
-        this.getRootPane().setDefaultButton(valider);
-        add(panneauCommandes, BorderLayout.SOUTH);
-    }
-
-    @Override
     protected void ajoutBoutons() {
         naviguer.addActionListener(
                 ae -> {
                     JFileChooser selecteur = new JFileChooser();
                     selecteur.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                    selecteur.setSelectedFile(new File("qcm.xml"));
                     int selection = selecteur.showSaveDialog(this);
                     if (selection == JFileChooser.APPROVE_OPTION) {
                         fichierChoisi = selecteur.getSelectedFile();
