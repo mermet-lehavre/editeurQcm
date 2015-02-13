@@ -21,7 +21,9 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GenerationXML {
@@ -29,6 +31,7 @@ public class GenerationXML {
     private StructureQcm structure;
     private File dossierSortie;
     private int nbCopies;
+    public List<String> codes;
 
     // Def Element
     private Document doc;
@@ -37,6 +40,7 @@ public class GenerationXML {
         structure = maStructure;
         dossierSortie = monDossierSortie;
         nbCopies = monNbCopies;
+        codes = new ArrayList<String>();
 
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         try {
@@ -117,6 +121,8 @@ public class GenerationXML {
         qcm.appendChild(etudiant);
 
         int cle = (int) (Math.random() * 90000) + 10000;
+        codes.add(String.valueOf(cle));
+        
         Element code = doc.createElement("code");
         code.appendChild(doc.createTextNode(String.valueOf(cle)));
         etudiant.appendChild(code);

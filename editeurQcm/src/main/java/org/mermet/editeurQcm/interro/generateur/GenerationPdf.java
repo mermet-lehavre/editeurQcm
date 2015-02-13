@@ -258,4 +258,47 @@ public class GenerationPdf {
 		zone.endText();		
 	}
 
+	public void genererCode(List<String> codes) {
+		try {
+			
+			PdfWriter writer = PdfWriter.getInstance(document,
+					new FileOutputStream(fichierSortie));
+			document.open();
+			zone = writer.getDirectContent();
+			
+			int nb = codes.size();
+			
+			for (int i = 0 ; i < nb; i++) {
+				ecrireCode(codes.get(i));
+				
+				if (i < nb) {
+					document.newPage();
+				}
+			}
+			
+			} catch (DocumentException de) {
+				de.printStackTrace();
+			} catch (IOException ioe) {
+				ioe.printStackTrace();
+			}
+		document.close();
+	}
+	
+	private void ecrireCode(String code) {
+		try {
+			document.add(new Paragraph("Code : \n\n"));
+			
+			Paragraph paraCode = new Paragraph(code);
+			Font policeTitre = paraCode.getFont();
+			policeTitre.setSize(24f);
+			paraCode.setFont(new Font(Font.FontFamily.HELVETICA, 24f));
+			paraCode.setAlignment(Paragraph.ALIGN_CENTER);
+			document.add(paraCode);
+			
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }

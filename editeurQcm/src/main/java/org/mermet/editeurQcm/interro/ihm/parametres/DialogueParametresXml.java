@@ -5,9 +5,11 @@
 package org.mermet.editeurQcm.interro.ihm.parametres;
 
 import org.mermet.editeurQcm.interro.donnees.StructureQcm;
+import org.mermet.editeurQcm.interro.generateur.GenerationPdf;
 import org.mermet.editeurQcm.interro.generateur.GenerationXML;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.io.File;
 
@@ -68,6 +70,11 @@ public class DialogueParametresXml extends DialogueParametres {
                     structureQcm,
                     (Integer) saisieNombre.getValue());
             generateur.generer();
+            
+            GenerationPdf generateurCode = new GenerationPdf(new File(fichierChoisi+"/qcmCodes.pdf"),
+					structureQcm,
+					(Integer) saisieNombre.getValue());
+			generateurCode.genererCode(generateur.codes);
             dispose();
         });
     }
