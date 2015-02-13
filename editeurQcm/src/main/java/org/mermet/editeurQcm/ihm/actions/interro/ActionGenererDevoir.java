@@ -7,7 +7,7 @@ import javax.swing.JDialog;
 import org.mermet.editeurQcm.ihm.EtatIhm;
 import org.mermet.editeurQcm.ihm.actions.ActionPerso;
 import org.mermet.editeurQcm.interro.donnees.StructureQcm;
-import org.mermet.editeurQcm.interro.ihm.DialogueParametresCopie;
+import org.mermet.editeurQcm.interro.ihm.parametres.DialogueParametresCopie;
 
 public class ActionGenererDevoir extends ActionPerso {
 	private static ActionGenererDevoir instance = null;

@@ -1,26 +1,24 @@
 package org.mermet.editeurQcm.interro.generateur;
 
-import org.mermet.editeurQcm.interro.donnees.StructureQcm;
 import org.zeroturnaround.zip.ZipUtil;
 
 import java.io.File;
 
 public class GenerationSite {
-    private GenerationXML generationXML;
+    private File dossierChoisi;
+    private String password;
 
-    public GenerationSite(File dossierChoisi, StructureQcm structureQcm, Integer nbCopies) {
-        generationXML = new GenerationXML(dossierChoisi, structureQcm, nbCopies);
+    public GenerationSite(File dossierChoisi, String password) {
+        this.dossierChoisi = dossierChoisi;
+        this.password = password;
     }
 
     public void generer() {
-        generationXML.generer();
 
-        /* TODO
-            Sélection du dossier où l'on importer le zip
-            Sélection du password pour la partie admin a changer dans le fichier admin.xml
-         */
+        // TODO Sélection du dossier où l'on importer le zip
+        // TODO Sélection du password pour la partie admin a changer dans le fichier admin.xml
 
         // Création du dossier compressé
-        ZipUtil.pack(new File("../siteQCM"), new File("siteQCM.zip"));
+        ZipUtil.pack(new File("../siteQCM"), new File(dossierChoisi.getAbsolutePath() + "/siteQCM.zip"));
     }
 }

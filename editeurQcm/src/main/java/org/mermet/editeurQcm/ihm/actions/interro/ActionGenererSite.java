@@ -3,7 +3,7 @@ package org.mermet.editeurQcm.ihm.actions.interro;
 import org.mermet.editeurQcm.ihm.EtatIhm;
 import org.mermet.editeurQcm.ihm.actions.ActionPerso;
 import org.mermet.editeurQcm.interro.donnees.StructureQcm;
-import org.mermet.editeurQcm.interro.ihm.DialogueParametresSite;
+import org.mermet.editeurQcm.interro.ihm.parametres.DialogueParametresSite;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
