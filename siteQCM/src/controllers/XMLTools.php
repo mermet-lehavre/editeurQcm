@@ -1,31 +1,46 @@
 <?php
+define("FILE_ADMIN", "ressources/data/admin.xml");
 
-class XMLTools
-{
+class XMLTools {
     private $document_xml;
     private $fichier;
     private $code;
     private $interro;
 
-    function __construct($fichier) {
-        $this->document_xml = new DomDocument();
-        $this->fichier = $fichier;
-
-        $this->document_xml->load($this->fichier);
-    }
-
-    function setCode($code) {
+    public function setCode($code) {
         $this->code = $code;
     }
 
-    function checkPassword($pwd) {
+    public function initAdminFile($dir) {
+        $this->document_xml = new DomDocument();
+        $this->fichier = $dir . FILE_ADMIN;
+        $this->document_xml->load($this->fichier);
+    }
+
+    public function initQcmFile($dir) {
+        $this->initAdminFile($dir);
+        $this->fichier = $dir . "ressources/data/" . $this->shearchQCMFile();
+        $this->document_xml->load($this->fichier);
+    }
+
+    public function shearchQCMFile() {
+        return $this->document_xml->getElementsByTagName('fileQCM')->item(0)->nodeValue;
+    }
+
+    public function checkPassword($pwd) {
         $password = $this->document_xml->getElementsByTagName('password')->item(0)->nodeValue;
-        if($pwd === $password)
+        if ($pwd === $password) {
             return true;
+        }
         return false;
     }
 
-    function showQCM() {
+    public function editFileQcm($fichierQCM) {
+        $this->document_xml->getElementsByTagName('fileQCM')->item(0)->nodeValue = $fichierQCM;
+        $this->document_xml->save($this->fichier);
+    }
+
+    public function showQCM() {
         $qcms = array();
 
         $titre = $this->document_xml->getElementsByTagName('titre-interro')->item(0)->nodeValue;
@@ -36,7 +51,7 @@ class XMLTools
         $indexQCM = 0;
 
         foreach ($this->document_xml->getElementsByTagName('qcm') as $qcm) {
-            if($qcm->getElementsByTagName('termine')->item(0)->nodeValue == "true") {
+            if ($qcm->getElementsByTagName('termine')->item(0)->nodeValue == "true") {
                 $nom = $qcm->getElementsByTagName('nom')->item(0)->nodeValue;
                 $prenom = $qcm->getElementsByTagName('prenom')->item(0)->nodeValue;
                 $note = $qcm->getElementsByTagName('note')->item(0)->nodeValue;
@@ -64,7 +79,7 @@ class XMLTools
                             $choixEtudiant = $reponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue;
                             $idReponse = $reponse->getAttribute('id');
 
-                            if($choixEtudiant == "true") {
+                            if ($choixEtudiant == "true") {
                                 $choix = true;
                             } else {
                                 $choix = false;
@@ -86,7 +101,7 @@ class XMLTools
         return $qcms;
     }
 
-    function searchQCM() {
+    public function searchQCM() {
         $titre = $this->document_xml->getElementsByTagName('titre-interro')->item(0)->nodeValue;
         $date = $this->document_xml->getElementsByTagName('date')->item(0)->nodeValue;
         $duree = $this->document_xml->getElementsByTagName('duree')->item(0)->nodeValue;
@@ -134,14 +149,14 @@ class XMLTools
         return NULL;
     }
 
-    function addReponse($question, $reponse) {
+    public function addReponse($question, $reponse) {
         foreach ($this->document_xml->getElementsByTagName('qcm') as $qcm) {
             $code = $qcm->getElementsByTagName('code')->item(0)->nodeValue;
 
             if ($code == $this->code) {
-                foreach($qcm->getElementsByTagName('question') as $xmlQuestion) {
+                foreach ($qcm->getElementsByTagName('question') as $xmlQuestion) {
                     if ($xmlQuestion->getAttribute('id') == $question->getId()) {
-                        foreach($xmlQuestion->getElementsByTagName('reponse') as $xmlReponse) {
+                        foreach ($xmlQuestion->getElementsByTagName('reponse') as $xmlReponse) {
                             if ($xmlReponse->getAttribute('id') == $reponse->getId()) {
                                 $xmlReponse->getElementsByTagName('choix-etudiant')->item(0)->nodeValue = "true";
                             }
@@ -152,7 +167,7 @@ class XMLTools
         }
     }
 
-    function addNote() {
+    public function addNote() {
         foreach ($this->document_xml->getElementsByTagName('qcm') as $qcm) {
             $code = $qcm->getElementsByTagName('code')->item(0)->nodeValue;
 
@@ -171,7 +186,7 @@ class XMLTools
                     }
 
                     if ($reponseCorrect) {
-                        $note +=1;
+                        $note += 1;
                     }
                 }
                 $noteReel = $note * 20 / $nbQuestion;
@@ -180,7 +195,7 @@ class XMLTools
         }
     }
 
-    function submitQCM($nom, $prenom, $numEtudiant) {
+    public function submitQCM($nom, $prenom, $numEtudiant) {
         foreach ($this->document_xml->getElementsByTagName('qcm') as $qcm) {
             $code = $qcm->getElementsByTagName('code')->item(0)->nodeValue;
 
@@ -194,4 +209,5 @@ class XMLTools
 
         $this->document_xml->save($this->fichier);
     }
+
 }

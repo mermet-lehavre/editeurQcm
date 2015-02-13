@@ -11,7 +11,8 @@ require_once("../src/model/Reponse.php");
  * Traitement du code
  */
 
-$xmlTools = new XMLTools("../ressources/data/qcm.xml");
+$xmlTools = new XMLTools();
+$xmlTools->initQcmFile("../");
 $xmlTools->setCode($_POST["code"]);
 $qcm = $xmlTools->searchQCM();
 

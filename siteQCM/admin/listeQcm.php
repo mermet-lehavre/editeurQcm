@@ -1,10 +1,19 @@
 <?php
+
+session_start();
+
+if (!isset($_SESSION['password'])) {
+    header("Location: index.php?pwd=wrong");
+    die();
+}
+
 // traitement du password + affichage des qcm
 require_once("../src/controllers/XMLTools.php");
 
-$xmlTools = new XMLTools("../ressources/data/admin.xml");
+$xmlTools = new XMLTools();
+$xmlTools->initAdminFile("../");
 
-if(!$xmlTools->checkPassword($_POST['password'])) {
+if(!$xmlTools->checkPassword($_SESSION['password'])) {
     header("Location: index.php?pwd=wrong");
     die();
 }
@@ -15,8 +24,7 @@ require_once("../src/model/Partie.php");
 require_once("../src/model/Question.php");
 require_once("../src/model/Reponse.php");
 
-$xmlTools = new XMLTools("../ressources/data/qcm.xml");
-
+$xmlTools->initQcmFile("../");
 $qcms = $xmlTools->showQCM();
 
 ?>

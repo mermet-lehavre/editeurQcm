@@ -10,7 +10,7 @@
 <body>
 
 <div class="container">
-    <form class="form-qcm" action="listeQcm.php" method="post">
+    <form class="form-qcm" action="admin.php" method="post">
         <h2 class="form-qcm-heading">Partie Administrateur - Saisir le mot de passe</h2>
         <input class="form-control" type="password" name="password" required/>
         <input class="btn btn-primary btn-block" type="submit"/>
