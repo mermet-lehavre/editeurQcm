@@ -31,7 +31,7 @@ public class GenerationXML {
     private StructureQcm structure;
     private File dossierSortie;
     private int nbCopies;
-    public List<String> codes;
+    private List<String> codes;
 
     // Def Element
     private Document doc;
@@ -40,7 +40,7 @@ public class GenerationXML {
         structure = maStructure;
         dossierSortie = monDossierSortie;
         nbCopies = monNbCopies;
-        codes = new ArrayList<String>();
+        codes = new ArrayList<>();
 
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         try {
@@ -49,6 +49,10 @@ public class GenerationXML {
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<String> getCodes() {
+        return codes;
     }
 
     private void simpleElement(Document doc, Element parent, Element fils, String content) {

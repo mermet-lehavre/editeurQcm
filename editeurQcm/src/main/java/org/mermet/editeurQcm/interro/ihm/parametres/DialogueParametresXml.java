@@ -71,10 +71,10 @@ public class DialogueParametresXml extends DialogueParametres {
                     (Integer) saisieNombre.getValue());
             generateur.generer();
             
-            GenerationPdf generateurCode = new GenerationPdf(new File(fichierChoisi+"/qcmCodes.pdf"),
+            GenerationPdf generateurCode = new GenerationPdf(fichierChoisi,
 					structureQcm,
 					(Integer) saisieNombre.getValue());
-			generateurCode.genererCode(generateur.codes);
+			generateurCode.genererCode(generateur.getCodes());
             dispose();
         });
     }

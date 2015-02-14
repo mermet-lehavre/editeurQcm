@@ -260,9 +260,9 @@ public class GenerationPdf {
 
 	public void genererCode(List<String> codes) {
 		try {
-			
+			File newFile = new File(fichierSortie.getAbsolutePath() + "/qcmCodes.pdf");
 			PdfWriter writer = PdfWriter.getInstance(document,
-					new FileOutputStream(fichierSortie));
+					new FileOutputStream(newFile));
 			document.open();
 			zone = writer.getDirectContent();
 			
@@ -296,7 +296,6 @@ public class GenerationPdf {
 			document.add(paraCode);
 			
 		} catch (DocumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
