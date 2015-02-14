@@ -10,11 +10,12 @@
 <body>
 
 <div class="container">
-	<h2 class="form-qcm-heading">Partie Administrateur</h2>
-    
+	<div class="panel panel-default" style="border-color:rgb(142, 134, 255);">
+	<div class="panel-body">
+            <div class="jumbotron titre"><h2>Partie Administrateur</h2></div>
+    <div class="bs-callout bs-callout-info" style="border-left-color: #1b809e;">
     <form class="form-qcm" action="admin.php" method="post">
-        <h2 class="form-qcm-heading">Saisir le mot de passe</h2>
-        <input class="form-control" type="password" name="password" required/>
+        <input class="form-control" style="width: 100%;" placeholder="Saisir le mot de passe" type="password" name="password" required/>
         <input class="btn btn-primary btn-block" type="submit"/>
 
         <?php
@@ -23,7 +24,10 @@
         }
         ?>
     </form>
-</div>
+	</div>
+	</div>
+	</div>
+	</div>
 
 </body>
 </html>

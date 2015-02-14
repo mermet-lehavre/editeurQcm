@@ -37,12 +37,17 @@ $fichierQCM = $xmlTools->shearchQCMFile();
 <body>
 
 <div class="container">
-    <h2 class="form-qcm-heading">Partie Administrateur</h2>
-
+<div class="panel panel-default" style="border-color:rgb(142, 134, 255);">
+	<div class="panel-body">
+            <div class="jumbotron titre"><h2>Partie Administrateur</h2></div>
     <form class="form-qcm" action="../src/controllers/editFileQCM.php" method="post">
-        <h3>Nom du Fichier QCM</h3>
-        <input class="form-control" type="text" name="fichierQCM" value="<?php echo $fichierQCM; ?>" Z required/>
-        <input class="btn btn-primary btn-block" type="submit"/>
+        <div class="panel panel-default" style="border-color:darkturquoise;">
+		<div class="panel-body">
+            <div class="jumbotron titre" style="background-color:darkturquoise;"><h5>Nom du Fichier QCM</h5></div>
+        <input class="form-control" style="width:100%" type="text" name="fichierQCM" placeholder="fichier.xml" value="<?php echo $fichierQCM; ?>" Z required/>
+        <input class="btn btn-primary btn-block" style="width:100%" type="submit"/>
+		</div>
+		</div>
     </form>
     <?php
     if (isset($_GET['success']) && $_GET['success'] == "edit") {
@@ -50,8 +55,10 @@ $fichierQCM = $xmlTools->shearchQCMFile();
     }
     ?>
     <div class="form-qcm">
-        <a class="btn btn-primary btn-lg" href="listeQcm.php">Liste des QCMs remplis</a>
+        <a class="btn btn-primary btn-lg" style="width:100%" href="listeQcm.php">Liste des QCMs remplis</a>
     </div>
+	</div>
+</div>
 </div>
 
 </body>

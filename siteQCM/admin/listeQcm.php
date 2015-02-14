@@ -39,7 +39,10 @@ $qcms = $xmlTools->showQCM();
     <link rel="stylesheet" type="text/css" href="../ressources/css/style.css">
 </head>
 <body>
-    <h3>Page administrateur</h3>
+    <div class="container">
+	<div class="panel panel-default" style="border-color:rgb(142, 134, 255);">
+	<div class="panel-body">
+            <div class="jumbotron titre"><h2>Partie Administrateur</h2></div>
     <?php
         foreach($qcms as $qcm) {
             echo $qcm->getEtudiant()->getNom();
@@ -52,10 +55,15 @@ $qcms = $xmlTools->showQCM();
             echo '<br/>';
 
             foreach($qcm->getParties() as $partie) {
-                echo $partie->getTitrePartie();
-                echo '<br/>';
+				echo "<div class='jumbotron' style='text-align: center;margin-top: 25px;background-color: darkturquoise;'>";
+				echo "<p class='contenu'>" . $partie->getTitrePartie() . "</p>";
+				echo "</div>";
+                
                 foreach($partie->getQuestions() as $question) {
-                    echo $question->getEnonce();
+				echo "<div class='jumbotron' style='text-align: center;margin-top: 25px;background-color: darkturquoise;'>";
+				echo "<p class='contenu'>" . $question->getEnonce() . "</p>";
+				echo "</div>";
+                    
                     echo '<br/>';
                     foreach($question->getReponses() as $reponse) {
                         if($reponse->getChoixEtudiant() == "true") {
@@ -77,5 +85,7 @@ $qcms = $xmlTools->showQCM();
     ?>
 <script src="../ressources/js/jquery-2.1.3.js"></script>
 <script src="../ressources/js/bootstrap.js"></script>
+	</div>
+	</div>
 </body>
 </html>
