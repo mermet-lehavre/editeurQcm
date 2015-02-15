@@ -42,9 +42,24 @@ $qcms = $xmlTools->showQCM();
     <div class="container">
 	<div class="panel panel-default" style="border-color:rgb(142, 134, 255);">
 	<div class="panel-body">
-            <div class="jumbotron titre"><h2>Partie Administrateur</h2></div>
+        <div class="jumbotron titre"><h2>Partie Administrateur</h2></div>
+
+        <div class="row">
+        <div class="col-md-4">
+        <?php if(sizeof($qcms) != 0) { ?>
+        <ul class="nav nav-pills nav-stacked">
+            <?php foreach($qcms as $qcm) { ?>
+            <li id="<?php echo $qcm->getEtudiant()->getCode(); ?>" role="presentation" class="" onclick='$(".show-qcm").hide(); $("#qcm-<?php echo $qcm->getEtudiant()->getCode(); ?>").show(); $("li").removeClass("active"); $("#<?php echo $qcm->getEtudiant()->getCode(); ?>").addClass("active");'><a href="#"><?php echo $qcm->getEtudiant()->getNom()." ".$qcm->getEtudiant()->getPrenom()." (".$qcm->getEtudiant()->getNumero().")"; ?></a></li>
+            <?php } ?>
+        </ul>
+        <?php } ?>
+        </div>
+        <div class="col-md-8">
     <?php
         foreach($qcms as $qcm) {
+    ?>
+        <div class="show-qcm" hidden="true" id="qcm-<?php echo $qcm->getEtudiant()->getCode(); ?>">
+    <?php
             echo $qcm->getEtudiant()->getNom();
             echo '<br/>';
             echo $qcm->getEtudiant()->getPrenom();
@@ -81,8 +96,11 @@ $qcms = $xmlTools->showQCM();
                 }
             }
             echo '<br/>';
+            echo '</div>';
         }
     ?>
+    </div>
+    </div>
 <script src="../ressources/js/jquery-2.1.3.js"></script>
 <script src="../ressources/js/bootstrap.js"></script>
 	</div>

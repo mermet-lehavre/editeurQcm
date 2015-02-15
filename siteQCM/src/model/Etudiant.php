@@ -20,7 +20,8 @@ class Etudiant {
         $this->code = $code;
     }
 
-    public function __construct4($nom, $prenom, $note, $numero) {
+    public function __construct5($code, $nom, $prenom, $note, $numero) {
+        $this->code = $code;
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->note = $note;

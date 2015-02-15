@@ -35,6 +35,11 @@ class XMLTools {
         return false;
     }
 
+    public function editPassword($newPassword) {
+        $this->document_xml->getElementsByTagName('password')->item(0)->nodeValue = $newPassword;
+        $this->document_xml->save($this->fichier);
+    }
+
     public function editFileQcm($fichierQCM) {
         $this->document_xml->getElementsByTagName('fileQCM')->item(0)->nodeValue = $fichierQCM;
         $this->document_xml->save($this->fichier);
@@ -52,11 +57,12 @@ class XMLTools {
 
         foreach ($this->document_xml->getElementsByTagName('qcm') as $qcm) {
             if ($qcm->getElementsByTagName('termine')->item(0)->nodeValue == "true") {
+                $code = $qcm->getElementsByTagName('code')->item(0)->nodeValue;
                 $nom = $qcm->getElementsByTagName('nom')->item(0)->nodeValue;
                 $prenom = $qcm->getElementsByTagName('prenom')->item(0)->nodeValue;
                 $note = $qcm->getElementsByTagName('note')->item(0)->nodeValue;
                 $numero = $qcm->getElementsByTagName('num-etudiant')->item(0)->nodeValue;
-                $etudiant = new Etudiant($nom, $prenom, $note, $numero);
+                $etudiant = new Etudiant($code, $nom, $prenom, $note, $numero);
 
                 $this->interro = new QCM($titre, $date, $duree, $avantPropos, $etudiant);
                 $indexPartie = 0;

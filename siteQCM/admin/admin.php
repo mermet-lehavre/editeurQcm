@@ -40,20 +40,44 @@ $fichierQCM = $xmlTools->shearchQCMFile();
 <div class="panel panel-default" style="border-color:rgb(142, 134, 255);">
 	<div class="panel-body">
             <div class="jumbotron titre"><h2>Partie Administrateur</h2></div>
-    <form class="form-qcm" action="../src/controllers/editFileQCM.php" method="post">
-        <div class="panel panel-default" style="border-color:darkturquoise;">
-		<div class="panel-body">
-            <div class="jumbotron titre" style="background-color:darkturquoise;"><h5>Nom du Fichier QCM</h5></div>
-        <input class="form-control" style="width:100%" type="text" name="fichierQCM" placeholder="fichier.xml" value="<?php echo $fichierQCM; ?>" Z required/>
-        <input class="btn btn-primary btn-block" style="width:100%" type="submit"/>
-		</div>
-		</div>
-    </form>
-    <?php
-    if (isset($_GET['success']) && $_GET['success'] == "edit") {
-        echo "<div class='alert alert-success' role='alert'><i class='glyphicon glyphicon-ok-sign'></i> Fichier QCM édité</div>";
-    }
-    ?>
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-qcm" action="../src/controllers/editFileQCM.php" method="post">
+                <div class="panel panel-default" style="border-color:darkturquoise;">
+                <div class="panel-body">
+                    <div class="jumbotron titre" style="background-color:darkturquoise;"><h5>Nom du Fichier QCM</h5></div>
+                <input class="form-control" style="width:100%" type="text" name="fichierQCM" placeholder="fichier.xml" value="<?php echo $fichierQCM; ?>" Z required/>
+                <input class="btn btn-primary btn-block" style="width:100%" type="submit"/>
+                </div>
+                </div>
+            </form>
+            <?php
+            if (isset($_GET['success']) && $_GET['success'] == "edit") {
+                echo "<div class='alert alert-success' role='alert'><i class='glyphicon glyphicon-ok-sign'></i> Fichier QCM édité</div>";
+            }
+            ?>
+        </div>
+        <div class="col-md-6">
+            <form class="form-qcm" action="../src/controllers/editPassword.php" method="post">
+                <div class="panel panel-default" style="border-color:darkturquoise;">
+                    <div class="panel-body">
+                        <div class="jumbotron titre" style="background-color:darkturquoise;"><h5>Mot de passe</h5></div>
+                        <input class="form-control" style="width:100%" type="password" name="oldPassword" placeholder="ancien mot de passe" Z required/>
+                        <input class="form-control" style="width:100%" type="password" name="newPassword" placeholder="nouveau mot de passe" Z required/>
+                        <input class="btn btn-primary btn-block" style="width:100%" type="submit"/>
+                    </div>
+                </div>
+            </form>
+            <?php
+            if (isset($_GET['success']) && $_GET['success'] == "password") {
+                echo "<div class='alert alert-success' role='alert'><i class='glyphicon glyphicon-ok-sign'></i> Mot de passe edité</div>";
+            }
+            if(isset($_GET['fail']) && $_GET['fail'] == 'password') {
+                echo "<div class='alert alert-danger' role='alert'><i class='glyphicon glyphicon-remove-sign'></i> Mot de passe incorrect</div>";
+            }
+            ?>
+        </div>
+    </div>
     <div class="form-qcm">
         <a class="btn btn-primary btn-lg" style="width:100%" href="listeQcm.php">Liste des QCMs remplis</a>
     </div>
