@@ -19,6 +19,6 @@ public class GenerationSite {
         // TODO Sélection du password pour la partie admin a changer dans le fichier admin.xml
 
         // Création du dossier compressé
-        ZipUtil.pack(new File("../siteQCM"), new File(dossierChoisi.getAbsolutePath() + "/siteQCM.zip"));
+        ZipUtil.pack(new File("siteQCM"), new File(dossierChoisi.getAbsolutePath() + "/siteQCM.zip"));
     }
 }
