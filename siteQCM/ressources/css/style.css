@@ -37,7 +37,12 @@ h1 {
 
 .enonce {
     background-color: rgb(142, 134, 255);
-    text-align: center;margin-top: 25px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.jumbotron p {
+    font-size: 16px;
 }
 
 .titre {

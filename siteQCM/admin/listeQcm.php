@@ -69,8 +69,8 @@ $qcms = $xmlTools->showQCM();
                         <div><h3><?php echo $qcm->getEtudiant()->getNote(); ?>/20</h3>
                         <?php
                         foreach ($qcm->getParties() as $partie) {
-                            echo "<div class='jumbotron titre-partie'";
-                            echo "<p class='contenu'>" . $partie->getTitrePartie() . "</p>";
+                            echo "<div class='jumbotron titre-partie'>";
+                            echo "<h3>" . $partie->getTitrePartie() . "</h3>";
                             echo "</div>";
 
                             foreach ($partie->getQuestions() as $question) {
