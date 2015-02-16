@@ -97,19 +97,20 @@ $qcms = $xmlTools->showQCM();
                                             else {
                                                 echo "btn-success";
                                             }
-                                        ?>' type="text" disabled><?php echo $reponse->getProposition(); ?></button>
+                                        ?>' type="text" disabled><xmp class="admin-proposition"><?php echo $reponse->getProposition(); ?></xmp></button>
                                     </div>
 
                                     <?php
                                 }
                             }
                         }
-                        echo '<br/>';
-                        echo '</div>';
-                        }
                         ?>
+                        <br/>
+                        </div>
                     </div>
+                    <?php } ?>
                 </div>
+
                 <script src="../ressources/js/script.js"></script>
                 <script src="../ressources/js/jquery-2.1.3.js"></script>
                 <script src="../ressources/js/bootstrap.js"></script>
