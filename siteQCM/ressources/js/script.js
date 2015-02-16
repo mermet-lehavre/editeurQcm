@@ -1,6 +1,6 @@
-function afficherQCM() {
+function afficherQCM(code) {
     $(".show-qcm").hide();
-    $("#qcm-<?php echo $qcm->getEtudiant()->getCode(); ?>").show();
+    $("#qcm-"+code).show();
     $("li").removeClass("active");
-    $("#<?php echo $qcm->getEtudiant()->getCode(); ?>").addClass("active");
+    $("#"+code).addClass("active");
 }

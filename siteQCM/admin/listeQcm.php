@@ -48,9 +48,11 @@ $qcms = $xmlTools->showQCM();
                 <div class="col-md-4">
                     <?php if (sizeof($qcms) != 0) { ?>
                         <ul class="nav nav-pills nav-stacked">
-                            <?php foreach ($qcms as $qcm) { ?>
-                                <li id="<?php echo $qcm->getEtudiant()->getCode(); ?>" role="presentation"
-                                    onclick='afficherQCM()'>
+                            <?php foreach ($qcms as $qcm) {
+                                    $code = $qcm->getEtudiant()->getCode();
+                            ?>
+                                <li id="<?php echo $code; ?>" role="presentation"
+                                    onclick='afficherQCM(<?php echo $code; ?>)'>
                                     <a href="#">
                                         <?php echo $qcm->getEtudiant()->getNom() . " " . $qcm->getEtudiant()->getPrenom() . " (" . $qcm->getEtudiant()->getNumero() . ")"; ?>
                                     </a>
