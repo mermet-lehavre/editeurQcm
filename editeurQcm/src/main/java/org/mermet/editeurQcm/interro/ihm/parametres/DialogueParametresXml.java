@@ -9,9 +9,7 @@ import org.mermet.editeurQcm.interro.generateur.GenerationPdf;
 import org.mermet.editeurQcm.interro.generateur.GenerationXML;
 
 import javax.swing.*;
-
 import java.awt.*;
-import java.io.File;
 
 public class DialogueParametresXml extends DialogueParametres {
 
@@ -71,10 +69,10 @@ public class DialogueParametresXml extends DialogueParametres {
                     (Integer) saisieNombre.getValue());
             generateur.generer();
             
-            GenerationPdf generateurCode = new GenerationPdf(fichierChoisi,
+            GenerationPdf generateurPdf = new GenerationPdf(fichierChoisi,
 					structureQcm,
 					(Integer) saisieNombre.getValue());
-			generateurCode.genererCode(generateur.getCodes());
+            generateurPdf.genererCode(generateur.getCodes());
             dispose();
         });
     }

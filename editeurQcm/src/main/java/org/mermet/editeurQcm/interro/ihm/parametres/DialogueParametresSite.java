@@ -1,39 +1,29 @@
 package org.mermet.editeurQcm.interro.ihm.parametres;
 
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.JDOMException;
-import org.jdom2.input.SAXBuilder;
-import org.jdom2.output.Format;
-import org.jdom2.output.XMLOutputter;
 import org.mermet.editeurQcm.interro.donnees.StructureQcm;
+import org.mermet.editeurQcm.interro.generateur.GenerationPdf;
 import org.mermet.editeurQcm.interro.generateur.GenerationSite;
 import org.mermet.editeurQcm.interro.generateur.GenerationXML;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class DialogueParametresSite extends DialogueParametres {
 
     private String password;
     private JLabel labelPwdAdmin;
     private JPasswordField pwdAdmin;
-    
+
     public DialogueParametresSite(StructureQcm maStructure) {
         super(maStructure);
     }
 
     @Override
     protected void creationComposant() {
-    	labelPwdAdmin = new JLabel("Mot de passe Administrateur : ");
-    	pwdAdmin = new JPasswordField(20);
-    	labelNombre = new JLabel("Nombre de copies : ");
+        labelPwdAdmin = new JLabel("Mot de passe Administrateur : ");
+        pwdAdmin = new JPasswordField(20);
+        labelNombre = new JLabel("Nombre de copies : ");
         SpinnerNumberModel modeleNombre = new SpinnerNumberModel(1, 1, 500, 1);
         saisieNombre = new JSpinner(modeleNombre);
         labelFichier = new JLabel("Dossier cible : ");
@@ -47,7 +37,7 @@ public class DialogueParametresSite extends DialogueParametres {
 
     @Override
     protected void dessinDesPanneauxParametres() {
-    	JPanel panelInfos = new JPanel();
+        JPanel panelInfos = new JPanel();
         panelInfos.setLayout(new BoxLayout(panelInfos, BoxLayout.Y_AXIS));
         JPanel panelNb = new JPanel(new FlowLayout(FlowLayout.LEFT));
         panelNb.add(labelNombre);
@@ -62,7 +52,7 @@ public class DialogueParametresSite extends DialogueParametres {
         panelAdmin.add(labelPwdAdmin);
         panelAdmin.add(pwdAdmin);
         panelInfos.add(panelAdmin);
-        
+
         add(panelInfos, BorderLayout.CENTER);
     }
 
@@ -83,37 +73,18 @@ public class DialogueParametresSite extends DialogueParametres {
         annuler.addActionListener(ae -> dispose());
 
         valider.addActionListener(e -> {
-        	password = String.valueOf(pwdAdmin.getPassword());
-        	try {
-				majPwd(password);
+            password = String.valueOf(pwdAdmin.getPassword());
 
-	            File dossierXML = new File(fichierChoisi.toString());
-	            GenerationXML generateurXml = new GenerationXML(dossierXML, structureQcm, (Integer) saisieNombre.getValue());
-	            generateurXml.generer();
-	            GenerationSite generateur = new GenerationSite(fichierChoisi, password);
-	            generateur.generer();
-	            dispose();
-        	} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+            File dossierXML = new File("../siteQCM/ressources/data");
+            GenerationXML generateurXml = new GenerationXML(dossierXML, structureQcm, (Integer) saisieNombre.getValue());
+            generateurXml.generer();
+            GenerationSite generateur = new GenerationSite(fichierChoisi, password);
+            generateur.generer();
+            GenerationPdf generateurPdf = new GenerationPdf(fichierChoisi);
+            generateurPdf.genererCode(generateurXml.getCodes());
+            dispose();
         });
     }
-    
-    public void majPwd(String newPwd) throws JDOMException, IOException{
-    	SAXBuilder builder = new SAXBuilder();
-    	String xmlPath = "siteQCM/ressources/data/admin.xml";
-		File xmlFile = new File(xmlPath);
-		Document doc = (Document) builder.build(xmlFile);
-		Element rootNode = doc.getRootElement();
-		
-		Element staff = rootNode.getChild("password");
-		staff.setText(newPwd);
-		XMLOutputter xmlOutput = new XMLOutputter();
-		 
-		xmlOutput.setFormat(Format.getPrettyFormat());
-		xmlOutput.output(doc, new FileWriter(xmlPath));
- 
-		System.out.println("File updated!");
-    }
+
+
 }

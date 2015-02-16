@@ -1,12 +1,9 @@
 package org.mermet.editeurQcm.interro.generateur;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfContentByte;
+import com.itextpdf.text.pdf.PdfWriter;
 import org.mermet.editeurQcm.donnees.Question;
 import org.mermet.editeurQcm.donnees.Reponse;
 import org.mermet.editeurQcm.interro.donnees.IQcm;
@@ -14,19 +11,11 @@ import org.mermet.editeurQcm.interro.donnees.PartieQcm;
 import org.mermet.editeurQcm.interro.donnees.Qcm;
 import org.mermet.editeurQcm.interro.donnees.StructureQcm;
 
-import com.itextpdf.text.Chunk;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.Phrase;
-import com.itextpdf.text.pdf.BaseFont;
-import com.itextpdf.text.pdf.PdfContentByte;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class GenerationPdf {
 	private StructureQcm structure;
@@ -51,11 +40,17 @@ public class GenerationPdf {
 		document = new Document(PageSize.A4);
 		largeur = (int) document.getPageSize().getWidth();
 		hauteur = (int) document.getPageSize().getHeight();
-		
 	}
 
+    public GenerationPdf(File fichierChoisi) {
+        fichierSortie = fichierChoisi;
+        document = new Document(PageSize.A4);
+        largeur = (int) document.getPageSize().getWidth();
+        hauteur = (int) document.getPageSize().getHeight();
+    }
 
-	public void generer() {
+
+    public void generer() {
 		try {
 			PdfWriter writer = PdfWriter.getInstance(document,
 					new FileOutputStream(fichierSortie));
@@ -276,10 +271,8 @@ public class GenerationPdf {
 				}
 			}
 			
-			} catch (DocumentException de) {
-				de.printStackTrace();
-			} catch (IOException ioe) {
-				ioe.printStackTrace();
+			} catch (DocumentException | IOException e) {
+				e.printStackTrace();
 			}
 		document.close();
 	}
