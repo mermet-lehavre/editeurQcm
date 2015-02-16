@@ -45,12 +45,17 @@ $qcms = $xmlTools->showQCM();
             <div class="jumbotron titre"><h2>Partie Administrateur</h2></div>
 
             <div class="row">
-                <div class="col-md-4">
-                    <?php if (sizeof($qcms) != 0) { ?>
+                <?php if (sizeof($qcms) == 0) { ?>
+                    <div class="col-md-12">
+                        <div class="alert alert-warning">Aucun QCM terminé</div>
+                    </div>
+                <?php
+                } else { ?>
+                    <div class="col-md-4">
                         <ul class="nav nav-pills nav-stacked">
                             <?php foreach ($qcms as $qcm) {
-                                    $code = $qcm->getEtudiant()->getCode();
-                            ?>
+                                $code = $qcm->getEtudiant()->getCode();
+                                ?>
                                 <li id="<?php echo $code; ?>" role="presentation"
                                     onclick='afficherQCM(<?php echo $code; ?>)'>
                                     <a href="#">
@@ -59,62 +64,65 @@ $qcms = $xmlTools->showQCM();
                                 </li>
                             <?php } ?>
                         </ul>
-                    <?php } ?>
-                </div>
-                <div class="col-md-8">
-                    <?php
-                    foreach ($qcms as $qcm) {
-                    ?>
-                    <div class="show-qcm" hidden="true" id="qcm-<?php echo $qcm->getEtudiant()->getCode(); ?>">
-                        <div><h3><?php echo $qcm->getEtudiant()->getNote(); ?>/20</h3>
-                        <?php
-                        foreach ($qcm->getParties() as $partie) {
-                            echo "<div class='jumbotron titre-partie'>";
-                            echo "<h3>" . $partie->getTitrePartie() . "</h3>";
-                            echo "</div>";
 
-                            foreach ($partie->getQuestions() as $question) {
-                                echo "<div class='jumbotron enonce'>";
-                                echo "<p class='contenu'>" . $question->getEnonce() . "</p>";
-                                echo "</div>";
-
-                                echo '<br/>';
-                                foreach ($question->getReponses() as $reponse) {
-                                    ?>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><?php
-                                            if ($reponse->getChoixEtudiant() == "true") {
-                                                echo '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>';
-                                            } else {
-                                                echo '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
-                                            }
-                                            ?>
-                                        </span>
-                                        <button class='btn-admin btn <?php
-                                            if ($reponse->getCorrect() == "false") {
-                                                echo "btn-danger";
-                                            }
-                                            else {
-                                                echo "btn-success";
-                                            }
-                                        ?>' type="text" disabled><xmp class="admin-proposition"><?php echo $reponse->getProposition(); ?></xmp></button>
-                                    </div>
-
-                                    <?php
-                                }
-                            }
-                        }
-                        ?>
-                        <br/>
-                        </div>
                     </div>
-                    <?php } ?>
-                </div>
+                    <div class="col-md-8">
+                        <?php
+                        foreach ($qcms as $qcm) {
+                            ?>
+                            <div class="show-qcm" hidden="true" id="qcm-<?php echo $qcm->getEtudiant()->getCode(); ?>">
+                                <div><h3><?php echo $qcm->getEtudiant()->getNote(); ?>/20</h3>
+                                    <?php
+                                    foreach ($qcm->getParties() as $partie) {
+                                        echo "<div class='jumbotron titre-partie'>";
+                                        echo "<h3>" . $partie->getTitrePartie() . "</h3>";
+                                        echo "</div>";
 
+                                        foreach ($partie->getQuestions() as $question) {
+                                            echo "<div class='jumbotron enonce'>";
+                                            echo "<p class='contenu'>" . $question->getEnonce() . "</p>";
+                                            echo "</div>";
+
+                                            echo '<br/>';
+                                            foreach ($question->getReponses() as $reponse) {
+                                                ?>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><?php
+                                                        if ($reponse->getChoixEtudiant() == "true") {
+                                                            echo '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>';
+                                                        } else {
+                                                            echo '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
+                                                        }
+                                                        ?>
+                                                    </span>
+                                                    <button class='btn-proposition btn <?php
+                                                    if ($reponse->getCorrect() == "false") {
+                                                        echo "btn-danger";
+                                                    } else {
+                                                        echo "btn-success";
+                                                    }
+                                                    ?>' disabled>
+                                                        <xmp class="xmp-proposition"><?php echo $reponse->getProposition(); ?></xmp>
+                                                    </button>
+                                                </div>
+
+                                            <?php
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                    <br/>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
                 <script src="../ressources/js/script.js"></script>
                 <script src="../ressources/js/jquery-2.1.3.js"></script>
                 <script src="../ressources/js/bootstrap.js"></script>
             </div>
         </div>
+    </div>
+</div>
 </body>
 </html>

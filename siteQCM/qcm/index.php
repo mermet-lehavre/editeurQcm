@@ -25,6 +25,8 @@
     ?>
     </form>
 </div>
-
+<div class="footer">
+    <div class="container">M. Mermet - 2015</div>
+</div>
 </body>
 </html>

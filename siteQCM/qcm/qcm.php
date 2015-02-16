@@ -80,9 +80,9 @@ if (!isset($qcm) || $qcm == NULL) {
                                         <input type='checkbox' name="question-<?php echo $idQuestion; ?>[]"
                                                value="<?php echo $idReponse; ?>" id="<?php echo $idInput; ?>"/>
                                         </span>
-                                        <input type='text' disabled class='form-control proposition'
-                                               aria-label='Text input with checkbox' for="<?php echo $idInput; ?>"
-                                               value="<?php echo $proposition; ?>" /> <br/>
+                                        <button class='btn-proposition btn btn-default' disabled>
+                                            <xmp class="xmp-proposition"><?php echo $proposition ?></xmp>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
