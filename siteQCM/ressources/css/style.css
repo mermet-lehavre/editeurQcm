@@ -31,11 +31,22 @@ h1 {
     border-top: 1px solid #e5e5e5;
 }
 
-.enonce {
+.proposition {
     background: white !important;
+}
+
+.enonce {
+    background-color: rgb(142, 134, 255);
+    text-align: center;margin-top: 25px;
 }
 
 .titre {
     text-align: center;
     background-color: rgb(104, 96, 215);
+}
+
+.titre-partie {
+    text-align: center;
+    margin-top: 25px;
+    background-color: darkturquoise;
 }

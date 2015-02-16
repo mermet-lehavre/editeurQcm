@@ -12,7 +12,7 @@
 <div class="container">
     <form class="form-qcm" action="qcm.php" method="post">
         <h2 class="form-qcm-heading">Sélectionner un code</h2>
-        <input class="form-control" name="code" value="" required/>
+        <input class="form-control" style="width: 100%;" name="code" value="" required/>
         <input class="btn btn-primary btn-block" type="submit"/>
 
     <?php

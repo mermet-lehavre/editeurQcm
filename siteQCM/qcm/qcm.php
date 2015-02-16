@@ -37,6 +37,7 @@ if (!isset($qcm) || $qcm == NULL) {
 
             <div class="jumbotron titre">
                 <h1><?php echo $qcm->getTitre() ?></h1>
+                <p><?php echo $qcm->getAvantPropos() ?></p>
             </div>
 
             <form method="post" action="../src/controllers/submitQCM.php">
@@ -60,32 +61,34 @@ if (!isset($qcm) || $qcm == NULL) {
 
                 <?php
                 foreach ($qcm->getParties() as $partie) {
-                    echo "<div class='jumbotron' style='text-align: center;margin-top: 25px;background-color: darkturquoise;'>";
+                    echo "<div class='jumbotron titre-partie'>";
                     echo "<p class='contenu'>" . $partie->getTitrePartie() . "</p>";
                     echo "</div>";
                     foreach ($partie->getQuestions() as $question) {
                         $idQuestion = $question->getId();
                         $enonce = $question->getEnonce();
-                        echo "<div style='text-align: center;margin-top: 25px;'>
-				<div class='jumbotron' style='background-color: rgb(142, 134, 255);'>Question $idQuestion : $enonce</div></div><div>";
+                        echo "
+				<div class='jumbotron enonce'>Question $idQuestion : $enonce</div><div>";
                         foreach ($question->getReponses() as $reponse) {
                             $idReponse = $reponse->getId();
                             $proposition = $reponse->getProposition();
                             $idInput = "reponse" . $idReponse . "q" . $idQuestion;
 
-                            echo "
-					<div class='row'>
-					<div class='col-lg-6'>
-					<div class='input-group'>
-					<span class='input-group-addon'>
-					<input type='checkbox' name='question-" . $idQuestion . "[]' value='$idReponse' id='$idInput'/> 
-					</span>
-					<input type='text' disabled class='form-control enonce'
-					aria-label='Text input with checkbox' for='$idInput' value='$proposition'/> <br/>
-					</div>
-					</div>
-					</div>
-					";
+                            ?>
+                            <div class='row'>
+                                <div class='col-lg-12'>
+                                    <div class='input-group'>
+                                        <span class='input-group-addon'>
+                                        <input type='checkbox' name="question-<?php echo $idQuestion; ?>[]"
+                                               value="<?php echo $idReponse; ?>" id="<?php echo $idInput; ?>"/>
+                                        </span>
+                                        <input type='text' disabled class='form-control proposition'
+                                               aria-label='Text input with checkbox' for="<?php echo $idInput; ?>"
+                                               value="<?php echo $proposition; ?>" /> <br/>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
                         }
                         echo "</div>";
                     }
@@ -94,7 +97,7 @@ if (!isset($qcm) || $qcm == NULL) {
                 <div class="form-group">
                     <div class='col-sm-10'>
                         <button type="submit" class="btn btn-primary" style="margin-top: 20px;"
-                                onclick="return confirm('Etes-vous sur de vouloir valider le QCM ?')">Envoyer
+                                onclick="return confirm('Etes-vous sur de vouloir valider le QCM ?');">Envoyer
                         </button>
                     </div>
                 </div>
