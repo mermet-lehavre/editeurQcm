@@ -50,3 +50,7 @@ h1 {
     margin-top: 25px;
     background-color: darkturquoise;
 }
+
+.btn-admin {
+    width:100%;
+}

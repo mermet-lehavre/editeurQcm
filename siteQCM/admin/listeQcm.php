@@ -30,7 +30,7 @@ $qcms = $xmlTools->showQCM();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Admin - QCM</title>
@@ -66,16 +66,8 @@ $qcms = $xmlTools->showQCM();
                     foreach ($qcms as $qcm) {
                     ?>
                     <div class="show-qcm" hidden="true" id="qcm-<?php echo $qcm->getEtudiant()->getCode(); ?>">
+                        <div><h3><?php echo $qcm->getEtudiant()->getNote(); ?>/20</h3>
                         <?php
-                        echo $qcm->getEtudiant()->getNom();
-                        echo '<br/>';
-                        echo $qcm->getEtudiant()->getPrenom();
-                        echo '<br/>';
-                        echo $qcm->getEtudiant()->getNumero();
-                        echo '<br/>';
-                        echo $qcm->getEtudiant()->getNote();
-                        echo '<br/>';
-
                         foreach ($qcm->getParties() as $partie) {
                             echo "<div class='jumbotron titre-partie'";
                             echo "<p class='contenu'>" . $partie->getTitrePartie() . "</p>";
@@ -88,17 +80,27 @@ $qcms = $xmlTools->showQCM();
 
                                 echo '<br/>';
                                 foreach ($question->getReponses() as $reponse) {
-                                    if ($reponse->getChoixEtudiant() == "true") {
-                                        echo '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>';
-                                    } else {
-                                        echo '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
-                                    }
-                                    if ($reponse->getCorrect() == "false") {
-                                        echo '<del>';
-                                    }
-                                    echo $reponse->getProposition();
-                                    echo '</del>';
-                                    echo '<br/>';
+                                    ?>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><?php
+                                            if ($reponse->getChoixEtudiant() == "true") {
+                                                echo '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>';
+                                            } else {
+                                                echo '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
+                                            }
+                                            ?>
+                                        </span>
+                                        <button class='btn-admin btn <?php
+                                            if ($reponse->getCorrect() == "false") {
+                                                echo "btn-danger";
+                                            }
+                                            else {
+                                                echo "btn-success";
+                                            }
+                                        ?>' type="text" disabled><?php echo $reponse->getProposition(); ?></button>
+                                    </div>
+
+                                    <?php
                                 }
                             }
                         }

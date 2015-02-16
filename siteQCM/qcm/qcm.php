@@ -57,8 +57,6 @@ if (!isset($qcm) || $qcm == NULL) {
                 </div>
                 <input type="hidden" name="code" value="<?php echo $qcm->getEtudiant()->getCode(); ?>"/>
 
-                <h3><?php echo $qcm->getAvantPropos() ?></h3>
-
                 <?php
                 foreach ($qcm->getParties() as $partie) {
                     echo "<div class='jumbotron titre-partie'>";

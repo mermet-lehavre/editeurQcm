@@ -69,9 +69,7 @@ public class DialogueParametresXml extends DialogueParametres {
                     (Integer) saisieNombre.getValue());
             generateur.generer();
             
-            GenerationPdf generateurPdf = new GenerationPdf(fichierChoisi,
-					structureQcm,
-					(Integer) saisieNombre.getValue());
+            GenerationPdf generateurPdf = new GenerationPdf(fichierChoisi);
             generateurPdf.genererCode(generateur.getCodes());
             dispose();
         });
