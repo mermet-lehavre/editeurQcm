@@ -61,10 +61,11 @@ public class FenetrePrincipale extends JFrame {
 		menuInterro.add(creerInterro);
 		JMenuItem creer1qcm = new JMenuItem(ActionGenererDevoir.getInstance());
 		menuInterro.add(creer1qcm);
+		JMenuItem genererSite = new JMenuItem(ActionGenererSite.getInstance());
+        menuInterro.add(genererSite);
         JMenuItem genererXml = new JMenuItem(ActionGenererXml.getInstance());
         menuInterro.add(genererXml);
-        JMenuItem genererSite = new JMenuItem(ActionGenererSite.getInstance());
-        menuInterro.add(genererSite);
+        
 		
 		barre.add(menuFichier);
 		barre.add(menuEditer);

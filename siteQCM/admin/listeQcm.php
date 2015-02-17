@@ -96,9 +96,7 @@ $qcms = $xmlTools->showQCM();
                                                         ?>
                                                     </span>
                                                     <button class='btn-proposition btn <?php
-                                                    if ($reponse->getCorrect() == "false") {
-                                                        echo "btn-danger";
-                                                    } else {
+                                                    if ($reponse->getCorrect() == "true") {
                                                         echo "btn-success";
                                                     }
                                                     ?>' disabled>

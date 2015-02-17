@@ -5,16 +5,13 @@ session_start();
 if (isset($_SESSION['password'])) {
     $password = $_SESSION['password'];
 }
-else {
-    $password = $_POST['password'];
-}
 
 require_once("../src/controllers/XMLTools.php");
 
 $xmlTools = new XMLTools();
 $xmlTools->initAdminFile("../");
 
-if ($xmlTools->checkPassword($password)) {
+if (isset($password) && $xmlTools->checkPassword($password)) {
     header("Location: admin.php");
     die();
 }
