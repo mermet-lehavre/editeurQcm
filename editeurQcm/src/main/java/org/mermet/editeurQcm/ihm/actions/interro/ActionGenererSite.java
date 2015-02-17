@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 public class ActionGenererSite extends ActionPerso {
     private static ActionGenererSite instance = null;
     private ActionGenererSite() {
-        super("Générer le site Web");
+        super("Générer le site Web...");
         setEnabled(false);
     }
     public static ActionGenererSite getInstance() {

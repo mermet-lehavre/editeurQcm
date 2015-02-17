@@ -12,7 +12,7 @@ import org.mermet.editeurQcm.interro.ihm.parametres.DialogueParametresXml;
 public class ActionGenererXml extends ActionPerso {
 	private static ActionGenererXml instance = null;
 	private ActionGenererXml() {
-		super("Générer le fichier Xml");
+		super("Générer le fichier Xml...");
 		setEnabled(false);
 	}
 	public static ActionGenererXml getInstance() {
