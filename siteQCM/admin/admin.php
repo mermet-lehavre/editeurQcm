@@ -55,6 +55,9 @@ $fichierQCM = $xmlTools->shearchQCMFile();
             if (isset($_GET['success']) && $_GET['success'] == "edit") {
                 echo "<div class='alert alert-success' role='alert'><i class='glyphicon glyphicon-ok-sign'></i> Fichier QCM édité</div>";
             }
+            if (isset($_GET['fail']) && $_GET['fail'] == 'file') {
+                echo "<div class='alert alert-danger' role='alert'><i class='glyphicon glyphicon-remove-sign'></i> Chargement impossible du fichier</div>";
+            }
             ?>
         </div>
         <div class="col-md-6">

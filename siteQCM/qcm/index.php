@@ -17,10 +17,13 @@
 
     <?php
     if (isset($_GET['err']) && $_GET['err'] == "null") {
-        echo "<div class='alert alert-danger' role='alert'><i class='glyphicon glyphicon-remove-sign'></i> QCM introuvalbe ou déjà validé</div>";
+        echo "<div class='alert alert-danger' role='alert'><i class='glyphicon glyphicon-remove-sign'></i> QCM introuvable ou déjà validé</div>";
     }
     if (isset($_GET['success']) && $_GET['success'] == "true") {
         echo "<div class='alert alert-success' role='alert'><i class='glyphicon glyphicon-ok-sign'></i> QCM validé</div>";
+    }
+    if (isset($_GET['fail']) && $_GET['fail'] == 'file') {
+        echo "<div class='alert alert-danger' role='alert'><i class='glyphicon glyphicon-remove-sign'></i> Chargement impossible du fichier</div>";
     }
     ?>
     </form>

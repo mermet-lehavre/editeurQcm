@@ -9,6 +9,7 @@ if (!isset($_SESSION['password'])) {
 
 // traitement du password + affichage des qcm
 require_once("../src/controllers/XMLTools.php");
+require_once("../src/controllers/funct.php");
 
 $xmlTools = new XMLTools();
 $xmlTools->initAdminFile("../");
@@ -24,8 +25,14 @@ require_once("../src/model/Partie.php");
 require_once("../src/model/Question.php");
 require_once("../src/model/Reponse.php");
 
-$xmlTools->initQcmFile("../");
+$init = $xmlTools->initQcmFile("../");
+if ($init == false) {
+    header("Location: admin.php?fail=file");
+    die();
+}
+
 $qcms = $xmlTools->showQCM();
+usort($qcms, "sortArray");
 
 ?>
 
@@ -115,12 +122,15 @@ $qcms = $xmlTools->showQCM();
                         <?php } ?>
                     </div>
                 <?php } ?>
+
                 <script src="../ressources/js/script.js"></script>
                 <script src="../ressources/js/jquery-2.1.3.js"></script>
                 <script src="../ressources/js/bootstrap.js"></script>
             </div>
         </div>
+        <a href="#" id="toTop"><i class="glyphicon glyphicon-arrow-up"></i></a>
     </div>
 </div>
+
 </body>
 </html>

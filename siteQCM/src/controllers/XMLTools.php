@@ -14,13 +14,21 @@ class XMLTools {
     public function initAdminFile($dir) {
         $this->document_xml = new DomDocument();
         $this->fichier = $dir . FILE_ADMIN;
+        if (!file_exists($this->fichier)) {
+            return false;
+        }
         $this->document_xml->load($this->fichier);
+        return true;
     }
 
     public function initQcmFile($dir) {
         $this->initAdminFile($dir);
         $this->fichier = $dir . "ressources/data/" . $this->shearchQCMFile();
+        if (!file_exists($this->fichier)) {
+            return false;
+        }
         $this->document_xml->load($this->fichier);
+        return true;
     }
 
     public function shearchQCMFile() {

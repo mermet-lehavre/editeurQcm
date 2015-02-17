@@ -12,7 +12,13 @@ require_once("../src/model/Reponse.php");
  */
 
 $xmlTools = new XMLTools();
-$xmlTools->initQcmFile("../");
+$init = $xmlTools->initQcmFile("../");
+
+if ($init == false) {
+    header("Location: index.php?fail=file");
+    die();
+}
+
 $xmlTools->setCode($_POST["code"]);
 $qcm = $xmlTools->searchQCM();
 
