@@ -21,9 +21,6 @@ public abstract class DialogueParametres extends JDialog {
     public DialogueParametres(StructureQcm maStructure) {
         super((Frame) null, "Paramètres", true);
         structureQcm = maStructure;
-        init();
-        pack();
-        setVisible(true);
     }
 
     protected void init() {

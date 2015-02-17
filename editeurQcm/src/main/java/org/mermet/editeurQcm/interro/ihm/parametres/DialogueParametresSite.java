@@ -17,6 +17,9 @@ public class DialogueParametresSite extends DialogueParametres {
 
     public DialogueParametresSite(StructureQcm maStructure) {
         super(maStructure);
+        init();
+        pack();
+        setVisible(true);
     }
 
     @Override

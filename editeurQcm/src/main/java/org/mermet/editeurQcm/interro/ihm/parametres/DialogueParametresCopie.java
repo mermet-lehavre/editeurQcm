@@ -21,6 +21,10 @@ public class DialogueParametresCopie extends DialogueParametres {
 
 	public DialogueParametresCopie(StructureQcm maStructure) {
         super(maStructure);
+        fichierChoisi = new File("qcm.pdf");
+        init();
+        pack();
+        setVisible(true);
 	}
 
     @Override

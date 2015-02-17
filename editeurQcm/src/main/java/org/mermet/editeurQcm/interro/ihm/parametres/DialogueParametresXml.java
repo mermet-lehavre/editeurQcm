@@ -15,6 +15,9 @@ public class DialogueParametresXml extends DialogueParametres {
 
     public DialogueParametresXml(StructureQcm maStructure) {
         super(maStructure);
+        init();
+        pack();
+        setVisible(true);
     }
 
     @Override
