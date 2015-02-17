@@ -40,7 +40,7 @@ $qcms = $xmlTools->showQCM();
 </head>
 <body>
 <div class="container">
-    <div class="panel panel-default" style="border-color:rgb(142, 134, 255);">
+    <div class="panel panel-default">
         <div class="panel-body">
             <div class="jumbotron titre"><h2>Partie Administrateur</h2></div>
 

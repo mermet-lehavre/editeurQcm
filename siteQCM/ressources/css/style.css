@@ -36,7 +36,7 @@ h1 {
 }
 
 .enonce {
-    background-color: rgb(142, 134, 255);
+    background-color: #9BD1F2;
     text-align: center;
     margin-top: 25px;
 }
@@ -47,13 +47,18 @@ h1 {
 
 .titre {
     text-align: center;
-    background-color: rgb(104, 96, 215);
+    background-color: #297FA5;
+    color: #F2F2F2;
+}
+
+.titre p {
+    color: #F2F2F2;
 }
 
 .titre-partie {
     text-align: center;
     margin-top: 25px;
-    background-color: darkturquoise;
+    background-color: #6DB4F2;
 }
 
 .btn-proposition {
@@ -64,4 +69,12 @@ h1 {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     margin: 5px;
+}
+
+.panel-default {
+    border-color: #93A299;
+}
+
+.admin-partie {
+    background-color: #6DB4F2;
 }

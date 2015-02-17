@@ -37,16 +37,16 @@ $fichierQCM = $xmlTools->shearchQCMFile();
 <body>
 
 <div class="container">
-<div class="panel panel-default" style="border-color:rgb(142, 134, 255);">
+<div class="panel panel-default">
 	<div class="panel-body">
             <div class="jumbotron titre"><h2>Partie Administrateur</h2></div>
     <div class="row">
         <div class="col-md-6">
             <form class="form-qcm" action="../src/controllers/editFileQCM.php" method="post">
-                <div class="panel panel-default" style="border-color:darkturquoise;">
+                <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="jumbotron titre" style="background-color:darkturquoise;"><h5>Nom du Fichier QCM</h5></div>
-                <input class="form-control" style="width:100%" type="text" name="fichierQCM" placeholder="fichier.xml" value="<?php echo $fichierQCM; ?>" Z required/>
+                    <div class="jumbotron admin-partie"><h5>Nom du Fichier QCM</h5></div>
+                <input class="form-control" style="width:100%" type="text" name="fichierQCM" placeholder="fichier.xml" value="<?php echo $fichierQCM; ?>" required/>
                 <input class="btn btn-primary btn-block" style="width:100%" type="submit"/>
                 </div>
                 </div>
@@ -59,9 +59,9 @@ $fichierQCM = $xmlTools->shearchQCMFile();
         </div>
         <div class="col-md-6">
             <form class="form-qcm" action="../src/controllers/editPassword.php" method="post">
-                <div class="panel panel-default" style="border-color:darkturquoise;">
+                <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="jumbotron titre" style="background-color:darkturquoise;"><h5>Mot de passe</h5></div>
+                        <div class="jumbotron admin-partie"><h5>Mot de passe</h5></div>
                         <input class="form-control" style="width:100%" type="password" name="oldPassword" placeholder="ancien mot de passe" Z required/>
                         <input class="form-control" style="width:100%" type="password" name="newPassword" placeholder="nouveau mot de passe" Z required/>
                         <input class="btn btn-primary btn-block" style="width:100%" type="submit"/>
