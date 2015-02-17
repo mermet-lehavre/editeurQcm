@@ -81,15 +81,17 @@ if (!isset($qcm) || $qcm == NULL) {
                             ?>
                             <div class='row'>
                                 <div class='col-lg-12'>
+                                    <ul class="list-group">
                                     <div class='input-group'>
                                         <span class='input-group-addon'>
                                         <input type='checkbox' name="question-<?php echo $idQuestion; ?>[]"
                                                value="<?php echo $idReponse; ?>" id="<?php echo $idInput; ?>"/>
                                         </span>
-                                        <button class='btn-proposition btn btn-default' disabled>
-                                            <xmp class="xmp-proposition"><?php echo $proposition ?></xmp>
-                                        </button>
+                                        <li class="list-group-item">
+                                            <?php echo $proposition ?>
+                                        </li>
                                     </div>
+                                    </ul>
                                 </div>
                             </div>
                         <?php

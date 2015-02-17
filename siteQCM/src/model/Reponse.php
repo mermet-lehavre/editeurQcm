@@ -36,7 +36,10 @@ class Reponse
 
     public function getProposition()
     {
-        return $this->proposition;
+        $prop = $this->proposition;
+        $prop = str_replace("<", "&lt;", $prop);
+        $prop = str_replace(">", "&gt;", $prop);
+        return $prop;
     }
 
     public function getCorrect()

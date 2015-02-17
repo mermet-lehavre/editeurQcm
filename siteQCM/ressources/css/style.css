@@ -85,3 +85,7 @@ h1 {
     right: 60px;
     z-index: 9999;
 }
+
+.list-group {
+    margin-bottom: 0;
+}

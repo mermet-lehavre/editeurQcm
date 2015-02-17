@@ -90,7 +90,9 @@ usort($qcms, "sortArray");
                                             echo "<p class='contenu'>" . $question->getEnonce() . "</p>";
                                             echo "</div>";
 
-                                            echo '<br/>';
+                                            echo '<br/>'; ?>
+                                            <ul class="list-group">
+                                            <?php
                                             foreach ($question->getReponses() as $reponse) {
                                                 ?>
                                                 <div class="input-group">
@@ -102,17 +104,20 @@ usort($qcms, "sortArray");
                                                         }
                                                         ?>
                                                     </span>
-                                                    <button class='btn-proposition btn <?php
+                                                    <li class="list-group-item<?php
                                                     if ($reponse->getCorrect() == "true") {
-                                                        echo "btn-success";
+                                                        echo " list-group-item-success";
                                                     }
-                                                    ?>' disabled>
-                                                        <xmp class="xmp-proposition"><?php echo $reponse->getProposition(); ?></xmp>
-                                                    </button>
+                                                    ?>" >
+                                                        <?php echo $reponse->getProposition(); ?>
+                                                    </li>
                                                 </div>
 
                                             <?php
                                             }
+                                            ?>
+                                            </ul>
+                                    <?php
                                         }
                                     }
                                     ?>
