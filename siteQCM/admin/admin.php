@@ -21,7 +21,7 @@ if (!$xmlTools->checkPassword($password)) {
 
 $_SESSION['password'] = $password;
 
-$fichierQCM = $xmlTools->shearchQCMFile();
+$fichierQCM = $xmlTools->searchQCMFile();
 
 ?>
 

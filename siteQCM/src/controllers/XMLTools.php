@@ -23,7 +23,7 @@ class XMLTools {
 
     public function initQcmFile($dir) {
         $this->initAdminFile($dir);
-        $this->fichier = $dir . "ressources/data/" . $this->shearchQCMFile();
+        $this->fichier = $dir . "ressources/data/" . $this->searchQCMFile();
         if (!file_exists($this->fichier)) {
             return false;
         }
@@ -31,7 +31,7 @@ class XMLTools {
         return true;
     }
 
-    public function shearchQCMFile() {
+    public function searchQCMFile() {
         return $this->document_xml->getElementsByTagName('fileQCM')->item(0)->nodeValue;
     }
 
