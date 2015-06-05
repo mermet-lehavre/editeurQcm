@@ -1,7 +1,5 @@
 package org.mermet.editeurQcm.donnees;
 
-import java.beans.PropertyChangeListener;
-
 import org.jdom2.Element;
 
 /**                                                                                                                                                                    

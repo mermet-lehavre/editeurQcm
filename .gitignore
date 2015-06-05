@@ -1,0 +1,11 @@
+# Maven class folder
+target/
+# eclipse config
+.classpath
+# IntelliJ config
+.idea/
+*.iml
+.project
+bin/
+.project
+.settings/

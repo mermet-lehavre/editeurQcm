@@ -6,7 +6,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.SwingUtilities;
 
-import org.mermet.editeurQcm.donnees.Matiere;
 import org.mermet.editeurQcm.ihm.actions.generales.ActionEditer;
 import org.mermet.editeurQcm.ihm.actions.generales.ActionEffacer;
 import org.mermet.editeurQcm.ihm.actions.generales.ActionEnregistrer;
@@ -14,7 +13,8 @@ import org.mermet.editeurQcm.ihm.actions.generales.ActionNouveau;
 import org.mermet.editeurQcm.ihm.actions.generales.ActionOuvrir;
 import org.mermet.editeurQcm.ihm.actions.interro.ActionCreerInterro;
 import org.mermet.editeurQcm.ihm.actions.interro.ActionGenererDevoir;
-import org.mermet.editeurQcm.interro.donnees.StructureQcm;
+import org.mermet.editeurQcm.ihm.actions.interro.ActionGenererSite;
+import org.mermet.editeurQcm.ihm.actions.interro.ActionGenererXml;
 
 @SuppressWarnings("serial")
 public class FenetrePrincipale extends JFrame {
@@ -61,6 +61,11 @@ public class FenetrePrincipale extends JFrame {
 		menuInterro.add(creerInterro);
 		JMenuItem creer1qcm = new JMenuItem(ActionGenererDevoir.getInstance());
 		menuInterro.add(creer1qcm);
+		JMenuItem genererSite = new JMenuItem(ActionGenererSite.getInstance());
+        menuInterro.add(genererSite);
+        JMenuItem genererXml = new JMenuItem(ActionGenererXml.getInstance());
+        menuInterro.add(genererXml);
+        
 		
 		barre.add(menuFichier);
 		barre.add(menuEditer);

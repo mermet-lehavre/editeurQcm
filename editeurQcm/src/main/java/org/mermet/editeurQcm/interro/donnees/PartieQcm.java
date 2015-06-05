@@ -1,8 +1,8 @@
 package org.mermet.editeurQcm.interro.donnees;
 
-import java.util.List;
-
 import org.mermet.editeurQcm.donnees.Question;
+
+import java.util.List;
 
 public class PartieQcm {
 	private String titre;

@@ -7,17 +7,17 @@ import javax.swing.JDialog;
 import org.mermet.editeurQcm.ihm.EtatIhm;
 import org.mermet.editeurQcm.ihm.actions.ActionPerso;
 import org.mermet.editeurQcm.interro.donnees.StructureQcm;
-import org.mermet.editeurQcm.interro.ihm.parametres.DialogueParametresCopie;
+import org.mermet.editeurQcm.interro.ihm.parametres.DialogueParametresXml;
 
-public class ActionGenererDevoir extends ActionPerso {
-	private static ActionGenererDevoir instance = null;
-	private ActionGenererDevoir() {
-		super("Générer les copies...");
+public class ActionGenererXml extends ActionPerso {
+	private static ActionGenererXml instance = null;
+	private ActionGenererXml() {
+		super("Générer le fichier Xml...");
 		setEnabled(false);
 	}
-	public static ActionGenererDevoir getInstance() {
+	public static ActionGenererXml getInstance() {
 		if (instance == null) {
-			instance = new ActionGenererDevoir();
+			instance = new ActionGenererXml();
 		}
 		return instance;
 	}
@@ -25,7 +25,7 @@ public class ActionGenererDevoir extends ActionPerso {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		StructureQcm structure = EtatIhm.getInstance().getStructureQcm();
-		JDialog parametres = new DialogueParametresCopie(structure);
+		JDialog parametres = new DialogueParametresXml(structure);
 	}
-	
+
 }

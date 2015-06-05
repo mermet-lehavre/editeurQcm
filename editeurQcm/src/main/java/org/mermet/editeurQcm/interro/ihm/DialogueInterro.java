@@ -137,6 +137,7 @@ public class DialogueInterro extends JDialog {
 			modeleQcm.setTitre(titre.getText());
 			modeleQcm.setDate(date.getText());
 			modeleQcm.setDuree(duree.getText());
+			modeleQcm.setAvantPropos(avantPropos.getText());
 			EtatIhm.getInstance().setStructureQcm(modeleQcm);
 			dispose();
 		});
